@@ -1,0 +1,56 @@
+function [spike_rate, time] = IDP_plot_PSTH(prepped_data, cell_to_plot, varargin)
+
+% prepped data must be the output of interleaved_data_prep
+% cell_to_plot is the index of the cell in the prepped data structure
+
+p = inputParser;
+p.addParameter('color', [0    0.4470    0.7410]) % set color to 0 to just return the PSTH and not plot it
+p.addParameter('bin', 1/119.5) % default set to one frame, but can be anything
+p.addParameter('smoothing', 1) % how much to smooth the PSTH, in bins
+p.addParameter('duration', 10) % in seconds
+p.addParameter('plot_offset', 0) % if you want to skip the first bit of time
+p.addParameter('negative', 0) % plots the PSTH upside down. Useful for comparing many PSTHs without want to lay them all over eachother 
+p.parse(varargin{:});
+color = p.Results.color;
+bin = p.Results.bin;
+smoothing = p.Results.smoothing;
+duration = p.Results.duration;
+plot_offset = p.Results.plot_offset;
+negative = p.Results.negative;
+clear p
+
+if length(color)==1 && color ~= 0
+   default_colors = get(gca,'ColorOrder');
+   color = default_colors(mod(color,7)+1,:); 
+end
+% It wants the right structure
+if iscell(prepped_data)
+   prepped_data.testspikes = prepped_data; 
+end
+
+trials = size(prepped_data.testspikes, 1);
+spikes = cell2mat(prepped_data.testspikes(:,cell_to_plot));
+
+%duration = ceil(max(spikes));
+bins = floor(duration/bin);
+
+% spike times to spikes per bin
+spikes = floor(spikes/bin);
+spikes_per_bin = zeros(bins,1);
+for i_bin = 1:bins
+    spikes_per_bin(i_bin) = sum(spikes == i_bin);
+end
+
+spike_rate = conv(spikes_per_bin, gausswin(smoothing), 'same'); % smooth the PSTH
+spike_rate = spike_rate/(bin*trials*sum(gausswin(smoothing))); % spike count to spike rate
+if negative; spike_rate = -spike_rate;end
+% plotting if that's your thing
+
+time = (1:bins)*bin+plot_offset;
+
+if length(color)==3
+    plot(time, spike_rate, 'Color' , color)
+    %set(gcf, 'Position', [ 500 500 800 200])
+end
+
+end

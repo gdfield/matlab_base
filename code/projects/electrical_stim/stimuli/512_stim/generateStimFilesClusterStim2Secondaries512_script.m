@@ -1,0 +1,123 @@
+%%%%%%%%% script used to generate stimulus files for spatial stimulation patterns (2 and 3
+%%%%%%%%% electrodes)
+%%%%%%%%%
+%%%%%%%%% code last checked 2010-10-13 by Lauren
+%%%%%%%%%
+%%%%%%%%% 2011-02-28: added 'smallAmpThresh' to separate small secondary amplitude
+%%%%%%%%% patterns from large secondary amplitude patterns
+
+% Variable trigger interval - follow the pop up!
+
+% clear all
+
+%cd '/Users/lhruby/MATLAB_code/stimuli/stimulus_files_experiment'
+
+% choose 1-3 electrodes (can be on edge of the array, but can't be 2nd nearest-neighbors)
+%Requirements for clusters of electrodes: must be non-overlapping
+% centerElectrodes = [57 171 446]; %2015-03-09-0
+centerElectrodes = 54; %2016-04-17-5
+% Electrode 446    Targeting cells: 6543, 6676, 6798
+% Electrode 57      Targeting cells 721, 782, 844
+% Electrode 171    Targeting cells 2673, 2675
+
+% centerElectrodes = [181 370 34]; 
+% % Targeted cells
+% % 352: 5330 5372
+% % 187: 2929 2795 3047 2948
+% % 147: 2198 2045(?) 2193
+TimeShiftInMs = 0; %offset the first stimulus from the beginning movie chunk
+arraySpacing = 60; %30 or 60 micron spacing
+includeAnodalPrimary = true; %otherwise, all combinations use primary electrode as cathodal only. setting to true gives 2x as many stimuli
+includeTriplets = true; % whether you use patterns with pairs only or pairs + triplets
+
+% For trying extreme ratios
+multiplierLimit = 2; %for large relative secondary amplitudes, reduces primary amplitude to keep secondary 
+%amplitude within this base amplitude multiplier while maintaining relative secondary:primary amplitude
+
+
+if includeTriplets
+    %%%%%%%%%%%%%%%%%%%%%%%% use this if you want to include patterns
+    %%%%%%%%%%%%%%%%%%%%%%%%% involving 2 secondary electrodes  
+    % may want to change vals depending on what you are trying to do. 
+    if arraySpacing == 30
+        %all relative to the primary
+        relAmps.normal = [0.25 0.5 1]; %for 30-micron array % will get applied to all pairs and triplets
+        relAmps.pairsOnly = [0.0001 1.5]; %control for primary-alone artifact and test of model limits (very small value used to force rounding down to 0 current)
+        relAmps.pairsOnlySmall = 0.1; %control for primary-alone artifact, separated from patterns with larger amplitude pulses on secondary electrodes to avoid rounding errors
+    elseif arraySpacing == 60
+        relAmps.normal = [0.5 1 2]; %for 60-micron array
+        relAmps.pairsOnly = [0.0001 1.5]; %control for primary-alone artifact (very small value used to force rounding down to 0 current)
+        relAmps.pairsOnlySmall = 0.1; %control for primary-alone artifact, separated from patterns with larger amplitude pulses on secondary electrodes to avoid rounding errors
+    else
+        errordlg('invalid array spacing')
+    end
+else
+    %%%%%%%%%%%%%%%%%%%%%%%%%%% use this instead if you only want patterns with
+    %%%%%%%%%%%%%%%%%%%%%%%%%%% single secondary electrodes
+    if arraySpacing == 30
+        relAmps.normal = [];
+        relAmps.pairsOnly = [0.0001 0.25 0.5 1 1.5];
+        relAmps.pairsOnlySmall = 0.1; %control for primary-alone artifact, separated from patterns with larger amplitude pulses on secondary electrodes to avoid rounding errors
+    elseif arraySpacing == 60
+        relAmps.normal = [];
+        relAmps.pairsOnly = [0.25 0.5 2/3 0.8 1 1.25 1.5 2 4];
+        %relAmps.pairsOnlySmall = 0.1; %control for primary-alone artifact, separated from patterns with larger amplitude pulses on secondary electrodes to avoid rounding errors
+        relAmps.pairsOnlySmall = [];
+    else
+        errordlg('invalid array spacing')
+    end
+end
+
+
+DelayInMs = 7.5;
+[electrodes, Array, clusterIDs, smallAmpPatterns] = generatePatternClusterStim2Secondaries512Wrapper(centerElectrodes, relAmps,...
+    'includeAnodalPrimaries', includeAnodalPrimary);
+
+for ii = 1:size(Array, 2)
+    if any(abs(Array(:,ii))>multiplierLimit);
+        Array(:,ii) = Array(:,ii)*(multiplierLimit/max(abs(Array(:,ii))));
+    end
+end
+
+MovieChunksFile = generateMovieClusterStim2Secondaries512(clusterIDs, TimeShiftInMs, DelayInMs, smallAmpPatterns);
+keyboard
+
+fid = fopen('3elecPats_el','wb','ieee-le.l64');
+fwrite(fid,electrodes,'int32');
+fclose(fid);
+
+fid = fopen('3elecPats__pt','wb','ieee-le.l64');
+fwrite(fid,Array,'double'); %was previously commented out for some reason...
+fclose(fid);
+
+fid = fopen('3elecPats__mv','wb','ieee-le.l64');
+fwrite(fid,MovieChunksFile,'int32');
+fclose(fid);
+
+
+%% Check ratios to check
+
+Array(1:7)
+figure; 
+plot3(Array(1,:),Array(2,:),Array(3,:),'x')
+xlabel('center elec'); ylabel('electrode 2'); zlabel('electrode 3'); 
+[xc,yc] = getElectrodeCoords512(); 
+figure; scatter(xc,yc,1,'k'); 
+for e = 1:7
+    text(xc(electrodes(e)),yc(electrodes(e)),num2str((e)),...
+        'HorizontalAlignment','center'); 
+end
+axis image; axis off;
+
+figure; 
+for pat = 1:1:size(Array,2); 
+    cla;
+    scatter(xc(:),yc(:),'k'); axis image; 
+    e = find(Array(:,pat)); 
+    hold on; 
+    scatter(xc(electrodes(e)),yc(electrodes(e)),100,...
+        Array(e,pat),'filled'); axis image;
+    caxis([0 2.5]); 
+    title(num2str(pat)); 
+    pause(0.1); 
+end
