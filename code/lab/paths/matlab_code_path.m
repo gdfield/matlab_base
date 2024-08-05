@@ -8,4 +8,5 @@ function the_path = matlab_code_path
 % 2014-10  grosberg - transition to git file structure
 
 %the_path = fullfile(mfilename('fullpath'),'../../../../');
-the_path = '/Users/gfield/Development/Chichilnisky-Lab/matlab/';
+the_path = '/Users/gfield/Development/matlab_base/';
+%the_path = '/Users/gfield/Development/Chichilnisky-Lab/matlab/';
