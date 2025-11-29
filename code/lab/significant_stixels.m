@@ -70,7 +70,7 @@ p = inputParser;
 p.addParameter('filter', []);
 p.addParameter('time', 'std',@(x)any(strcmpi(x,{'max','std'})));
 p.addParameter('select','thresh',@(x)any(strcmpi(x,{'thresh','max'})));
-p.addParameter('robust_std_method', 3);
+p.addParameter('robust_std_method', 2);
 
 % choose default 'strength' value based on number of colors
 if size(sta,3) == 1

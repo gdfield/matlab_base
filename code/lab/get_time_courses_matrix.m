@@ -40,7 +40,7 @@ for rgc = 1:length(cell_indices)
         if isempty(datarun.stas.marks{cell_indices(rgc)})
             
             % get sta
-            sta = datarun.stas.stas{cell_index(rgc)};
+            sta = datarun.stas.stas{cell_indices(rgc)};
             % get significant stixels
             sig_stixels = significant_stixels(sta, 'marks_params', marks_params);
         else

@@ -1,6 +1,6 @@
 %% Plot the mosaic of the h-OS cells
 
-datapath = '/Volumes/gdf/2012-10-31-0/YASS/data000/data000';
+datapath = '/Volumes/gdf/rat-data/2012-10-31-0/YASS/data000/data000';
 datarun = load_data(datapath);
 datarun = load_neurons(datarun);
 datarun = load_params(datarun);
@@ -25,7 +25,7 @@ exportgraphics(gcf, 'hos_mosaic_labels.pdf', 'ContentType', 'vector')
 %% Plot the RFs of all of the definite OS cells
 
 % load white noise run
-datapath = '/Volumes/gdf/2012-10-31-0/YASS/data000/data000';
+datapath = '/Volumes/gdf/rat-data/2012-10-31-0/YASS/data000/data000';
 datarun = load_data(datapath);
 datarun = load_neurons(datarun);
 datarun = load_params(datarun);
@@ -39,7 +39,7 @@ datarun = get_sta_summaries(datarun, 'all', 'marks_params', marks_params);
 datarun = set_polarities(datarun, 'guess', true);
 
 % load gratings run
-datapath_dg = '/Volumes/gdf/2012-10-31-0/YASS/data002/data002';
+datapath_dg = '/Volumes/gdf/rat-data/2012-10-31-0/YASS/data002/data002';
 datarun_dg = load_data(datapath_dg);
 datarun_dg = load_neurons(datarun_dg);
 datarun_dg = load_params(datarun_dg);

@@ -19,7 +19,7 @@ function datarun = get_sta_summaries(datarun, cell_spec, varargin)
 % pause                 false       if RFs are plotted, pause after plotting each one
 % keep_stas             true        keep any STA which was not already stored in datarun?
 %
-% robust_std_method     3           Algorithm for robust_std; just gets loaded directly into marks_params;
+% robust_std_method     2           Algorithm for robust_std; just gets loaded directly into marks_params;
 %                                   will not override if already set in marks_params; see robust_std for 
 %                                   more information.
 %
@@ -67,7 +67,7 @@ p.addParamValue('pause', false);
 
 p.addParamValue('keep_stas', true);
 
-p.addParamValue('robust_std_method', 3);
+p.addParamValue('robust_std_method', 2);
 
 p.addParamValue('marks_params', struct);
 p.addParamValue('keep_marks', true);
