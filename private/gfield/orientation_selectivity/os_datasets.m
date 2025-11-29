@@ -8,8 +8,9 @@ p.addParameter('experiment', 'all', @ischar);
 % resolve user input and default values
 p.parse(varargin{:});
 
-path_prefix = '/Volumes/backup011/';
+path_prefix = '/Volumes/gdf/';
 temp_index = 1;
+
 
 
 % 2022-12-21-0 
@@ -19,14 +20,6 @@ data_list(temp_index).trigger_interval = 12;
 data_list(temp_index).wn_datapath = [path_prefix, '2022-12-21-0/Yass/data000/data000'];
 temp_index = temp_index +1;
 
-% % 2023-08-09-0 
-% data_list(temp_index).grating_datapath = [path_prefix, '2023-08-09-0/data001/data001'];
-% data_list(temp_index).stimulus_path = [path_prefix, '2023-08-09-0 /stimuli/stim1.txt'];
-% data_list(temp_index).trigger_interval = 12;
-% data_list(temp_index).wn_datapath = [path_prefix, '2023-08-09-0/data000/data000'];
-% temp_index = temp_index +1;
-
-
 % 2012-05-31-1 
 data_list(temp_index).grating_datapath = [path_prefix, '2012-05-31-1/data002/data002'];
 data_list(temp_index).stimulus_path = [path_prefix, '2012-05-31-1/stimuli/s02'];
@@ -35,10 +28,10 @@ data_list(temp_index).wn_datapath = [path_prefix, '2012-05-31-1/Yass/data001/dat
 temp_index = temp_index +1;
 
 % 2012-10-10-1 
-data_list(temp_index).grating_datapath = [path_prefix, '2012-10-10-1/data001-3600-7200/data002-map/data002-map'];
+data_list(temp_index).grating_datapath = [path_prefix, '2012-10-10-1/data001-3600-7200s/data002-map/data002-map'];
 data_list(temp_index).stimulus_path = [path_prefix, '2012-10-10-1/stimuli/s02'];
 data_list(temp_index).trigger_interval = 12;
-data_list(temp_index).wn_datapath = [path_prefix, '2012-10-10-1/Yass/data001-3600-7200/data001-3600-7200'];
+data_list(temp_index).wn_datapath = [path_prefix, '2012-10-10-1/Yass/data001/data001'];
 temp_index = temp_index +1;
 
 % 2012-10-15-0 
@@ -50,12 +43,12 @@ temp_index = temp_index +1;
 
 % 2012-10-31-0 
 data_list(temp_index).grating_datapath = [path_prefix, '2012-10-31-0/Yass/data002/data002'];
-data_list(temp_index).stimulus_path = [path_prefix, '2012-10-31-0/stimuli/s02'];
-data_list(temp_index).trigger_interval = 12;
+data_list(temp_index).stimulus_path = [path_prefix, '2012-10-31-0/data000-1800-7200/stimuli/s02'];
+data_list(temp_index).trigger_interval = 10;
 data_list(temp_index).wn_datapath = [path_prefix, '2012-10-31-0/Yass/data000/data000'];
 temp_index = temp_index +1;
 
-% %013-10-28-0
+% 2013-10-28-0
 data_list(temp_index).grating_datapath = [path_prefix, '2013-10-28-0/data003/data003'];
 data_list(temp_index).stimulus_path = [path_prefix, '2013-10-28-0/stimuli/S03'];
 data_list(temp_index).trigger_interval = 10;
@@ -104,13 +97,12 @@ data_list(temp_index).trigger_interval = 10;
 data_list(temp_index).wn_datapath = [path_prefix, '2018-02-26-0/data003/data003'];
 temp_index = temp_index + 1;
 
-% %2018-04-09-0 DG and WN
-% data_list(temp_index).grating_datapath = [path_prefix, '2018-04-09-0/data004-map/data004-map'];
-% data_list(temp_index).stimulus_path = [path_prefix, '2018-04-09-0/stimuli/dg.txt'];
-% data_list(temp_index).trigger_interval = 10;
-% data_list(temp_index).wn_datapath = [path_prefix, '2018-04-09-0/data005/data005'];
-% temp_index = temp_index + 1;
-% 
+%2018-04-09-0 DG and WN
+data_list(temp_index).grating_datapath = [path_prefix, '2018-04-09-0/data004-map/data004-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2018-04-09-0/stimuli/dg.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2018-04-09-0/data003/data003'];
+temp_index = temp_index + 1;
 
 %2018-04-18-0 DG and WN
 data_list(temp_index).grating_datapath = [path_prefix, '2018-04-18-0/data003-map_KR/data003'];
@@ -147,7 +139,7 @@ data_list(temp_index).trigger_interval = 10;
 data_list(temp_index).wn_datapath = [path_prefix, '2018-11-29-0/data010_KR/data010_KR']; %NDF0, this WN run has not been analyzed
 temp_index = temp_index + 1;
 
-%% potentially version good. Worthly of YASS or Kilosort work.
+% potentially version good. Worthly of YASS or Kilosort work.
 % %2018-11-30-0
 data_list(temp_index).grating_datapath = [path_prefix, '2018-11-30-0/data004_KR-map/data004_KR-map']; %NDF0
 data_list(temp_index).stimulus_path = [path_prefix, '2018-11-30-0/stimuli/dg.txt'];
@@ -155,10 +147,183 @@ data_list(temp_index).trigger_interval = 10;
 data_list(temp_index).wn_datapath = [path_prefix, '2018-11-30-0/data003/data003']; %NDF0
 temp_index = temp_index + 1;
 
+% 2019-01-21-0
+data_list(temp_index).grating_datapath = [path_prefix, '2019-01-21-0/data004_KR-map/data004_KR-map']; %NDF0
+data_list(temp_index).stimulus_path = [path_prefix, '2019-01-21-0/stimuli/dg.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2019-01-21-0/data003/data003']; %NDF0
+temp_index = temp_index + 1;
+
+% need to fix some trigger issue around trigger index 264 -- looks like a
+% trigger was missed and this is throwing off the indexing to the gratings.
+% % 2019-02-15-0
+% data_list(temp_index).grating_datapath = [path_prefix, '2019-02-15-0/data011-map/data011-map']; %NDF0
+% data_list(temp_index).stimulus_path = [path_prefix, '2019-02-15-0/stimuli/dg.txt'];
+% data_list(temp_index).trigger_interval = 10;
+% data_list(temp_index).wn_datapath = [path_prefix, '2019-02-15-0/data010/data010']; %NDF0
+% temp_index = temp_index + 1;
+% 
+
+% 2019-04-08-0 Quite a few complex cells, a few simple.
+data_list(temp_index).grating_datapath = [path_prefix, '2019-04-08-0/data002_KR-map/data002_KR-map']; %NDF0
+data_list(temp_index).stimulus_path = [path_prefix, '2019-04-08-0/stimuli/dg.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2019-04-08-0/data001/data001']; %NDF0
+temp_index = temp_index + 1;
+
+% 2019-07-15-0 
+data_list(temp_index).grating_datapath = [path_prefix, '2019-07-15-0/data005_KR-map/data005_KR-map']; %NDF0
+data_list(temp_index).stimulus_path = [path_prefix, '2019-07-15-0/stimuli/dg2.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2019-07-15-0/data004/data004']; %NDF0
+temp_index = temp_index + 1;
+
+
+% 2021-09-09-0 
+data_list(temp_index).grating_datapath = [path_prefix, '2021-09-09-0/YASS/data003/data003']; %NDF0
+data_list(temp_index).stimulus_path = [path_prefix, '2021-09-09-0/stimuli/s03.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2021-09-09-0/YASS/data002/data002']; %NDF0
+temp_index = temp_index + 1;
+
+% 2021-09-23-0 
+data_list(temp_index).grating_datapath = [path_prefix, '2021-09-23-0/data003/data003']; %NDF0
+data_list(temp_index).stimulus_path = [path_prefix, '2021-09-23-0/stimuli/s03.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2021-09-23-0/data004/data004']; %NDF0
+temp_index = temp_index + 1;
+
+% 2021-10-07-0 
+data_list(temp_index).grating_datapath = [path_prefix, '2021-10-07-0/YASS/data001/data001']; %NDF0
+data_list(temp_index).stimulus_path = [path_prefix, '2021-10-07-0/stimuli/s01.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2021-10-07-0/YASS/data000/data000']; %NDF0
+temp_index = temp_index + 1;
+
+
+% % 2023-08-09-0 
+% data_list(temp_index).grating_datapath = [path_prefix, '2023-08-09-0/data001/data001'];
+% data_list(temp_index).stimulus_path = [path_prefix, '2023-08-09-0 /stimuli/stim1.txt'];
+% data_list(temp_index).trigger_interval = 12;
+% data_list(temp_index).wn_datapath = [path_prefix, '2023-08-09-0/data000/data000'];
+% temp_index = temp_index +1;
+
+% 2014-10-13-0
+data_list(temp_index).grating_datapath = [path_prefix, '2014-10-13-0/map-from-data002-ywq/data002/data002'];
+data_list(temp_index).stimulus_path = [path_prefix, '2014-10-13-0/stimuli/s02'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2014-10-13-0/map-from-data002-ywq/data001/data001'];
+temp_index = temp_index + 1;
+
+% 2014-10-15-0
+data_list(temp_index).grating_datapath = [path_prefix, '2014-10-15-0/map-from-data002-ywq/data002/data002'];
+data_list(temp_index).stimulus_path = [path_prefix, '2014-10-15-0/stimuli/s02'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2014-10-15-0/map-from-data002-ywq/data001/data001'];
+temp_index = temp_index + 1;
+
+% 2017-09-20-0
+data_list(temp_index).grating_datapath = [path_prefix, '2017-09-20-0/YASS/data006/data006'];
+data_list(temp_index).stimulus_path = [path_prefix, '2017-09-20-0/stimuli/s06.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2017-09-20-0/YASS/data005/data005'];
+temp_index = temp_index + 1;
+
+% 2018-03-05-0
+data_list(temp_index).grating_datapath = [path_prefix, '2018-03-05-0/data003/data003'];
+data_list(temp_index).stimulus_path = [path_prefix, '2018-03-05-0/stimuli/s03.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2018-03-05-0/data005/data005'];
+temp_index = temp_index + 1;
+
+% 2018-08-02-0
+data_list(temp_index).grating_datapath = [path_prefix, '2018-08-02-0/data002-map/data002-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2018-08-02-0/stimuli/data002.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2018-08-02-0/data000/data000'];
+temp_index = temp_index + 1;
+
+% 2018-08-15-0
+data_list(temp_index).grating_datapath = [path_prefix, '2018-08-15-0/data002-map/data002-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2018-08-15-0/stimuli/data002.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2018-08-15-0/data000/data000'];
+temp_index = temp_index + 1;
+
+% 2018-09-03-0
+data_list(temp_index).grating_datapath = [path_prefix, '2018-09-03-0/data012-map/data012-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2018-09-03-0/stimuli/s12.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2018-09-03-0/data011/data011'];
+temp_index = temp_index + 1;
+
+% 2019-04-01-0
+data_list(temp_index).grating_datapath = [path_prefix, '2019-04-01-0/data002-map/data002-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2019-04-01-0/stimuli/sap.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2019-04-01-0/data001/data001'];
+temp_index = temp_index + 1;
+
+% 2019-06-24-0
+data_list(temp_index).grating_datapath = [path_prefix, '2019-06-24-0/Yass/data006/data006'];
+data_list(temp_index).stimulus_path = [path_prefix, '2019-06-24-0/stimuli/s06.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2019-06-24-0/Yass/data005/data005'];
+temp_index = temp_index + 1;
+
+% 2019-11-13-0
+data_list(temp_index).grating_datapath = [path_prefix, '2019-11-13-0/data007_MR-map/data007_MR-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2019-11-13-0/stimuli/dg007.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2019-11-13-0/data006_MR/data006_MR'];
+temp_index = temp_index + 1;
+
+% 2020-01-14-0
+data_list(temp_index).grating_datapath = [path_prefix, '2020-01-14-0/data007-map/data007-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2020-01-14-0/stimuli/dg007.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2020-01-14-0/data006/data006'];
+temp_index = temp_index + 1;
+
+% 2020-02-17-0
+data_list(temp_index).grating_datapath = [path_prefix, '2020-02-17-0/data007/data007'];
+data_list(temp_index).stimulus_path = [path_prefix, '2020-02-17-0/stimuli/dg007.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2020-02-17-0/data003/data003'];
+temp_index = temp_index + 1;
+
+% 2020-03-12-0
+data_list(temp_index).grating_datapath = [path_prefix, '2020-03-12-0/data007-map/data007-map'];
+data_list(temp_index).stimulus_path = [path_prefix, '2020-03-12-0/stimuli/dg007.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2020-03-12-0/data005_MR/data005_MR'];
+temp_index = temp_index + 1;
+
+
+% 2021-06-02-0
+data_list(temp_index).grating_datapath = [path_prefix, '2021-06-02-0/data002/data002'];
+data_list(temp_index).stimulus_path = [path_prefix, '2021-06-02-0/stimuli/s02.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2021-06-02-0/data001/data001'];
+temp_index = temp_index + 1;
+
+% 2021-06-09-0
+data_list(temp_index).grating_datapath = [path_prefix, '2021-06-09-0/data002/data002'];
+data_list(temp_index).stimulus_path = [path_prefix, '2021-06-09-0/stimuli/s02.txt'];
+data_list(temp_index).trigger_interval = 10;
+data_list(temp_index).wn_datapath = [path_prefix, '2021-06-09-0/data000/data000'];
+temp_index = temp_index + 1;
 
 
 
 
+
+% 2022-12-21-0
+data_list(temp_index).grating_datapath = [path_prefix, '2022-12-21-0/Yass/data001/data001'];
+data_list(temp_index).stimulus_path = [path_prefix, '2022-12-21-0/stimuli/s01.txt'];
+data_list(temp_index).trigger_interval = 9;
+data_list(temp_index).wn_datapath = [path_prefix, '2022-12-21-0/Yass/data000/data000'];
+temp_index = temp_index + 1;
 
 
 

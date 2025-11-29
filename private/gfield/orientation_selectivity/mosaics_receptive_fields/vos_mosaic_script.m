@@ -1,0 +1,122 @@
+datapath = '/Volumes/gdf/2012-10-15-0/YASS/data000/data000';
+datarun = load_data(datapath);
+datarun = load_neurons(datarun);
+datarun = load_params(datarun);
+datarun = load_sta(datarun, 'load_sta', 'OFF vOS');
+
+marks_params.thresh = 4.0;
+
+datarun = get_sta_summaries(datarun, 'OFF vOS', 'marks_params', marks_params);
+
+plot_rf_summaries(datarun, 'OFF vOS', 'plot_fit', true)
+
+cd ~/Desktop/
+exportgraphics(gcf, 'vos_mosaic.pdf', 'ContentType', 'vector')
+
+plot_rf_portraits(datarun, 'OFF vOS')
+
+
+
+
+%%
+
+% load white noise run
+datapath = '/Volumes/gdf/2012-10-15-0/YASS/data000/data000';
+datarun = load_data(datapath);
+datarun = load_neurons(datarun);
+datarun = load_params(datarun);
+datarun = load_sta(datarun, 'load_sta', 'all');
+datarun = load_ei(datarun, 'all', 'array_type', 512);
+
+% set some parameters and get sta summaries
+marks_params.thresh = 3.5;
+filt_rad = 0.75;
+datarun = get_sta_summaries(datarun, 'all', 'marks_params', marks_params);
+datarun = set_polarities(datarun, 'guess', true);
+
+% load gratings run
+datapath_dg = '/Volumes/gdf/2012-10-15-0/data002/data002';
+datarun_dg = load_data(datapath_dg);
+datarun_dg = load_neurons(datarun_dg);
+datarun_dg = load_params(datarun_dg);
+datarun_dg = load_ei(datarun_dg, 'all', 'array_type', 512);
+
+% load the os list and maybe-list info
+load /Users/gfield/Desktop/os_analysis/2012-10-15-0_os.mat
+
+% may the os cell IDs from gratings to white noise run
+mapped_cell_list = map_ei(datarun_dg, datarun, 'master_cell_type', os_cell_list, 'corr_threshold', 0.9);
+os_cell_indices = get_cell_indices(datarun_dg, os_cell_list);
+
+% plot the RFs
+cd /Users/gfield/Desktop/os_analysis/2012-10-15-0/rf_plots
+for rgc = 1:length(os_cell_list)
+
+    wn_cell_id = mapped_cell_list{os_cell_indices(rgc)};
+    if isempty(wn_cell_id)
+        warning('white noise cell ID is empty')
+        continue
+    end
+    wn_cell_index = get_cell_indices(datarun, wn_cell_id);
+
+    temp_rf = datarun.stas.rfs{wn_cell_index};
+    temp_params = struct('filt_type','gauss','radius',filt_rad);
+    [filt_rf, ~] = rf_filtered(temp_rf, temp_params);
+    norm_rf = norm_image(filt_rf);
+    imagesc(squeeze(norm_rf(:,:,1)))
+    colormap(brewermap([],'RdBu'))
+    caxis([0,1])
+    axis equal
+    axis tight
+    plot_rf_summaries(datarun, wn_cell_id, 'foa', 1, 'plot_fits', true)
+    temp_title = ['wn', num2str(wn_cell_id),'-dg', num2str(os_cell_list(rgc))];
+    title(temp_title)
+    exportgraphics(gca, [temp_title, '.pdf'], 'ContentType','vector')
+
+end
+
+
+%%
+
+ei_corr_threshold = 0.9;
+
+path_prefix = '/Volumes/gdf/'
+% 2012-10-15-0 
+grating_datapath = [path_prefix, '2012-10-15-0/data002/data002'];
+data_list(temp_index).stimulus_path = [path_prefix, '2012-10-15-0/stimuli/s02'];
+data_list(temp_index).trigger_interval = 12;
+wn_datapath = [path_prefix, '2012-10-15-0/Yass/data000/data000'];
+temp_index = temp_index +1;
+
+grating_datarun = load_data(grating_datapath);
+grating_datarun = load_neurons(grating_datarun);
+grating_datarun = load_ei(grating_datarun, 'all');
+
+wn_datarun = load_data(wn_datapath);
+wn_datarun = load_neurons(wn_datarun);
+wn_datarun = load_ei(wn_datarun, 'all');
+wn_datarun = load_sta(wn_datarun, 'load_sta', 'all');
+wn_datarun = load_params(wn_datarun);
+
+mapped_list = map_ei(grating_datarun, wn_datarun, 'master_cell_type', os_cell_list, 'corr_threshold', ei_corr_threshold);
+
+
+
+
+cd /Users/gfield/Desktop/os_analysis/2012-10-15-0/rf_plots
+for rgc = 1:length(datarun.cell_ids)
+
+    temp_rf = datarun.stas.rfs{rgc};
+    temp_params = struct('filt_type','gauss','radius',filt_rad);
+    [filt_rf, ~] = rf_filtered(temp_rf, temp_params);
+    norm_rf = norm_image(filt_rf);
+    imagesc(squeeze(norm_rf(:,:,1)))
+    colormap(brewermap([],'RdBu'))
+    caxis([0,1])
+    axis equal
+    axis off
+    temp_name = num2str(datarun.cell_ids(rgc));
+    title(temp_name)
+    exportgraphics(gca, [temp_name, '.pdf'], 'ContentType','vector')
+
+end
