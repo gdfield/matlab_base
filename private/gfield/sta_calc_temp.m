@@ -103,7 +103,7 @@ refresh_rate = 60.35; % this is the refresh rate of the video display in Hz.
 num_frames = floor(datarun.duration * refresh_rate);
 
 [gmov,height,width,duration,refresh] = get_movie_from_datarun(datarun, num_frames);
-gmov = squeeze(gmov(:,:,1,:));
+%gmov = squeeze(gmov(:,:,1,:));
 gmov = 2*gmov - 1;
 
 % size the movie to check its size.
@@ -116,8 +116,6 @@ bin_spike_times = histcounts(spike_times, frame_bins);
 spike_triggers = find(bin_spike_times > 0);
 
 STA_length = 24;
-
-
 rgc_STA = zeros(height, width, STA_length);
 for fm = 1:length(spike_triggers)
     if spike_triggers(fm) < STA_length

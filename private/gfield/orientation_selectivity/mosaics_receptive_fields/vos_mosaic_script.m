@@ -1,10 +1,10 @@
-datapath = '/Volumes/gdf/2012-10-15-0/YASS/data000/data000';
+datapath = '/Volumes/gdf/rat-data/2012-10-15-0/YASS/data000/data000';
 datarun = load_data(datapath);
 datarun = load_neurons(datarun);
 datarun = load_params(datarun);
 datarun = load_sta(datarun, 'load_sta', 'OFF vOS');
 
-marks_params.thresh = 4.0;
+marks_params.thresh = 3.5;
 
 datarun = get_sta_summaries(datarun, 'OFF vOS', 'marks_params', marks_params);
 
@@ -15,13 +15,95 @@ exportgraphics(gcf, 'vos_mosaic.pdf', 'ContentType', 'vector')
 
 plot_rf_portraits(datarun, 'OFF vOS')
 
+%% going to refit the spatial STAs because I'm not sure this is working properly.
+
+temp_cell_indices = get_cell_indices(datarun, 'OFF vOS');
+filt_rad = 0.5;
+filter_params = struct('filt_type','gauss','radius',filt_rad);
+
+for rgc = 1:length(temp_cell_indices)
+    temp_sta = datarun.stas.stas{temp_cell_indices(rgc)};
+    temp_sta = squeeze(temp_sta);
+    [xdim, ydim, tdim] = size(temp_sta);
+    temp_rf = datarun.stas.rfs{temp_cell_indices(rgc)};
+
+    % get view RF from get_sta_summaries
+    figure(1); clf
+    filt_rf = rf_filtered(temp_rf, temp_params);
+    norm_rf = norm_image(filt_rf);
+    imagesc(squeeze(norm_rf(:,:,1)))
+    colormap(brewermap([],'RdBu'))
+    caxis([0,1])
+    axis equal
+    axis tight
+    title('RF from get sta summaries')
+
+    % view RF from SVD
+    % filter the each spatial frame
+    for fm = 1:tdim
+        temp_sta_filt(:,:,fm) = rf_filtered(squeeze(temp_sta(:,:,fm)), temp_params);
+    end
+    % SVD
+    [spatial_vecs, eigenvals, temporal_vecs] = svd(reshape(temp_sta_filt, [xdim*ydim, tdim]));
+    % get the rank one kernal
+    rankOneSpace = spatial_vecs(:,1);
+    rankOneSpace = reshape(rankOneSpace, [xdim, ydim]);
+    rankOneNorm = norm_image(rankOneSpace);
+    figure(2); clf;
+    imagesc(squeeze(rankOneNorm(:,:,1)))
+    colormap(brewermap([],'RdBu'))
+    caxis([0,1])
+    axis equal
+    axis tight
+    title('RF from SVD')
+
+    if rgc == 4
+        rf_for_fit = filt_rf;
+    else
+        rf_for_fit = rankOneSpace;
+    end
+
+    % take ABS of rf estimate from get_sta_summaries.
+    stixel_std = robust_std(rf_for_fit(:), 2);  % get robust STD estimate
+    z_scored_spatial_rf = rf_for_fit./ stixel_std; % z-score values
+    sig_indx = find(z_scored_spatial_rf(:) < -3); % find values with large negative z-scores
+    abs_zscored_spatial_rf = z_scored_spatial_rf; % initial matrix
+    abs_zscored_spatial_rf(sig_indx) = abs(z_scored_spatial_rf(sig_indx)); % set values positive
+
+    figure(3); clf;
+    norm_abs_rf = norm_image(abs_zscored_spatial_rf);
+    imagesc(squeeze(norm_abs_rf(:,:,1)))
+    colormap(brewermap([],'RdBu'))
+    caxis([0,1]) 
+    axis equal
+    axis tight
+    title('rectified RF')
+
+    %% fit an Gaussian to the spatial profile
+    [temp_fitParams, fittedGaussian, gof] = fit_2d_gaussian_rf(squeeze(norm_abs_rf(:,:,1)));
+    hold on
+    plot_gaussian_ellipse(temp_fitParams)
+
+    v_OS_fits{rgc} = temp_fitParams;
+    pause
+
+    figure(4)
+    axis ij
+    axis([1 80 1 40])
+    if rgc == 1
+        clf;
+        plot_gaussian_ellipse(temp_fitParams)
+        hold on
+    else
+        plot_gaussian_ellipse(temp_fitParams)
+    end
+
+end
 
 
-
-%%
 
 % load white noise run
-datapath = '/Volumes/gdf/2012-10-15-0/YASS/data000/data000';
+datapath = '/Volumes/gdf/rat-data/2012-10-15-0/YASS/data000/data000';
 datarun = load_data(datapath);
 datarun = load_neurons(datarun);
 datarun = load_params(datarun);
@@ -35,7 +117,7 @@ datarun = get_sta_summaries(datarun, 'all', 'marks_params', marks_params);
 datarun = set_polarities(datarun, 'guess', true);
 
 % load gratings run
-datapath_dg = '/Volumes/gdf/2012-10-15-0/data002/data002';
+datapath_dg = '/Volumes/gdf/rat-data/2012-10-15-0/data002/data002';
 datarun_dg = load_data(datapath_dg);
 datarun_dg = load_neurons(datarun_dg);
 datarun_dg = load_params(datarun_dg);
