@@ -12,9 +12,13 @@ datarun = get_sta_summaries(datarun, 'OFF vOS', 'marks_params', marks_params);
 vOS_indices = get_cell_indices(datarun, 'OFF vOS');
 
 datarun = get_sta_summaries(datarun, 'OFF type1', 'marks_params', marks_params);
-OFF_type1_indices = get_cell_indices(datarun, 'OFF type1');
+temp_indices = get_cell_indices(datarun, 'OFF type1');
 
-%% Get movie and appropriate binning
+%% Compute the STA of a cell
+
+% get spike times
+temp_spike_times = datarun.spikes{temp_indices(1)};
+
 % figure out the stimulus interval
 mov_interval = datarun.stimulus.interval;
 
@@ -31,28 +35,12 @@ gmov = 2*gmov - 1;
 % put 'samples_per_trigger' between each trigger to get the frame times. 
 frame_times = uniform_subsample_triggers(datarun.triggers, samples_per_trigger);
 
-%% Compute the STA of a cell
-
-% get spike times
-temp_spike_times = datarun.spikes{vOS_indices(1)};
-
 % count spikes in each frame
 hist_spikes = histcounts(temp_spike_times, frame_times);
 
 % compute the STA and STV
 frames_back = 24; % define the number of frames in STA
-gmov = squeeze(gmov(:,:,1,:));
-[STA] = compute_sta_binned(gmov, hist_spikes, frames_back);
-[STV, STV_diff] = compute_stv_binned(gmov, hist_spikes, frames_back, false, 1000);
-
-if length(size(STA)) == 3
-    STA = repmat(STA, [1 1 1 3]);
-    STA = permute(STA, [1 2 4 3]);
-    STV_diff = repmat(STV_diff, [1 1 1 3]);
-    STV_diff = permute(STV_diff, [1 2 4 3]);
-    STV = repmat(STV, [1 1 1 3]);
-    STV = permute(STV, [1 2 4 3]);
-end
+[STA, STV] = compute_sta_stv_binned(gmov, hist_spikes, frames_back);
 
 % extract TC and RF from STA and view
 marks_params.robust_std_method = 2;
@@ -63,34 +51,16 @@ temp_sig_stixels = significant_stixels(STA,marks_params);
 temp_tc = time_course_from_sta(STA, temp_sig_stixels);
 temp_rf = rf_from_sta(STA, 'sig_stixels', temp_sig_stixels);
 figure(1); clf
-subplot(1, 2, 1)
+subplot(2, 1, 1)
 image(norm_image(temp_rf))
 axis square
 axis tight
 axis off
-subplot(1,2,2)
+subplot(2,2,2)
 plot(temp_tc, 'k')
 axis square
 axis tight
 
-% extract TC and RF from STV and view
-marks_params.robust_std_method = 2;
-marks_params.thresh = 4.0;
-temp_sig_stixels_v = significant_stixels(STV_diff,marks_params);
-% check that the significant stixels are reasonable.
-%imagsc(full(temp_sig_stixels))
-temp_tc_v = time_course_from_sta(STV_diff, temp_sig_stixels);
-temp_rf_v = rf_from_sta(STV_diff, 'sig_stixels', temp_sig_stixels);
-figure(2); clf
-subplot(1, 2, 1)
-image(norm_image(temp_rf_v))
-axis square
-axis tight
-axis off
-subplot(1,2,2)
-plot(temp_tc_v, 'k')
-axis square
-axis tight
 
 
 
