@@ -2,11 +2,11 @@ datapath = '/Volumes/gdf/rat-data/2012-10-15-0/YASS/data000/data000';
 datarun = load_data(datapath);
 datarun = load_neurons(datarun);
 datarun = load_params(datarun);
-datarun = load_sta(datarun, 'load_sta', 'all');
+datarun = load_sta(datarun, 'load_sta', 'OFF vOS');
 
-marks_params.thresh = 4;
+marks_params.thresh = 3.5;
 
-datarun = get_sta_summaries(datarun, 'all', 'marks_params', marks_params);
+datarun = get_sta_summaries(datarun, 'all;, 'marks_params', marks_params);
 
 plot_rf_summaries(datarun, 'OFF vOS', 'plot_fit', true)
 
@@ -15,10 +15,10 @@ plot_rf_portraits(datarun, 'OFF vOS')
 %% going to refit the spatial STAs because I'm not sure this is working properly.
 
 temp_cell_indices = get_cell_indices(datarun, 'OFF vOS');
-filt_rad = 0.75;
+filt_rad = 0.5;
 filter_params = struct('filt_type','gauss','radius',filt_rad);
 
-v_OS_IDs = [1174 521 707 713 916 1177 834 735 582];
+v_OS_IDs = [1174 521 707 713 916 1177 834  735 582];
 temp_cell_indices = get_cell_indices(datarun, v_OS_IDs);
 
 for rgc = 1:length(temp_cell_indices)
@@ -29,7 +29,7 @@ for rgc = 1:length(temp_cell_indices)
 
     % get view RF from get_sta_summaries
     figure(1); clf
-    filt_rf = rf_filtered(temp_rf, filter_params);
+    filt_rf = rf_filtered(temp_rf, temp_params);
     norm_rf = norm_image(filt_rf);
     imagesc(squeeze(norm_rf(:,:,1)))
     colormap(brewermap([],'RdBu'))
@@ -40,7 +40,6 @@ for rgc = 1:length(temp_cell_indices)
 
     % view RF from SVD
     % filter the each spatial frame
-    temp_sta_filt = zeros(size(temp_sta));
     for fm = 1:tdim
         temp_sta_filt(:,:,fm) = rf_filtered(squeeze(temp_sta(:,:,fm)), filter_params);
     end
@@ -58,14 +57,14 @@ for rgc = 1:length(temp_cell_indices)
     axis tight
     title('RF from SVD')
 
-    if rgc > 0
+    if rgc == 4
         rf_for_fit = filt_rf;
     else
         rf_for_fit = rankOneSpace;
     end
 
     % take ABS of rf estimate from get_sta_summaries.
-    stixel_std = robust_std(rf_for_fit(:), 1);  % get robust STD estimate
+    stixel_std = robust_std(rf_for_fit(:), 2);  % get robust STD estimate
     z_scored_spatial_rf = rf_for_fit./ stixel_std; % z-score values
     sig_indx = find(z_scored_spatial_rf(:) < -3); % find values with large negative z-scores
     abs_zscored_spatial_rf = z_scored_spatial_rf; % initial matrix

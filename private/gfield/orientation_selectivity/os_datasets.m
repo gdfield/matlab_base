@@ -8,7 +8,7 @@ p.addParameter('experiment', 'all', @ischar);
 % resolve user input and default values
 p.parse(varargin{:});
 
-path_prefix = '/Volumes/gdf/';
+path_prefix = '/Volumes/gdf/rat-data/';
 temp_index = 1;
 
 

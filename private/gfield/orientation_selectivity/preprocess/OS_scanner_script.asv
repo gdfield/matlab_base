@@ -21,11 +21,11 @@ datarun_g = load_stim(datarun_g, 'user_defined_trigger_interval', path_info.trig
 
 
 % load WN data
-datarun_wn = load_data(path_info.wn_datapath);
-datarun_wn = load_neurons(datarun_wn);
-datarun_wn = load_params(datarun_wn);
-datarun_wn = load_sta(datarun_wn, 'load_sta', 'all');
-datarun_wn = load_ei(datarun_wn, 'all');
+datarun = load_data(path_info.wn_datapath);
+datarun = load_neurons(datarun);
+datarun = load_params(datarun);
+datarun = load_sta(datarun, 'load_sta', 'all');
+datarun = load_ei(datarun, 'all');
 
     
 % extract spatial and temporal periods from datarun
@@ -36,19 +36,8 @@ num_tps = length(temp_periods);
 num_dirs = length(datarun_g.stimulus.params.DIRECTION);
     
 
-% Choose and OSI threshold
-%OSI_thresh = 0.40; % threshold of OS cells
-%DSI_thresh = 0.25; % threshold for DS cells
-response_cor_thresh = 0.3; % threshold on mean correlation across trials
-ei_corr_threshold = 0.9; % threshold for EI mapping
-filt_rad = 0.75;
-fast_plot = true;
-wn_map = 1; % decided whether (1) or not (0) to map to white noise
-
-
 
 num_rgcs = length(os_cell_list);
-os_cell_indices = get_cell_indices(datarun_g, os_cell_list);
 
 for rgc = 1:num_rgcs
     OSI = zeros(num_sps,num_tps);
@@ -56,11 +45,11 @@ for rgc = 1:num_rgcs
     mean_cor = zeros(num_sps,num_tps);
 
     % get spikes from an RGC and extract tuning curves
-    temp_spike_times = datarun_g.spikes{os_cell_indices(rgc)};
+    temp_spike_times = datarun.spikes{rgc};
     
     for spat_p = 1:num_sps
         for temp_p = 1:num_tps
-            [tuning_struct, temp_spike_nums, ~] = get_direction_tuning(temp_spike_times, datarun_g.stimulus,...
+            [tuning_struct, temp_spike_nums, ~] = get_direction_tuning(temp_spike_times, datarun.stimulus,...
                                                         'SP', spatial_periods(spat_p), 'TP', temp_periods(temp_p));
               
             % compute Orientation-Selective Index
@@ -129,50 +118,73 @@ for rgc = 1:num_rgcs
         end
     end
     
-    fig_counter = 1;
-    for spat_p = 1:num_sps
-        for temp_p = 1:num_tps
-            temp_sp = spatial_periods(spat_p);
-            temp_tp = temp_periods(temp_p);
-            fig_title = ['cell id-', num2str(os_cell_list(rgc)), ' SP-', num2str(temp_sp), ' TP-', num2str(temp_tp)];
-            [temp_tuning, temp_spike_nums, temp_rates] = get_direction_tuning(temp_spike_times, datarun_g.stimulus,...
-                                                    'SP', spatial_periods(spat_p), 'TP', temp_periods(temp_p));
-            plot_direction_tuning(temp_tuning, temp_spike_nums, datarun_g.stimulus, 'fig_num', fig_counter, 'fig_title', fig_title)  
-            drawnow
-            exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'vector');
-            fig_counter = fig_counter + 1;
-        end
-    end
-    fprintf('OSIs are %g \n', OSI)
-    fprintf('DSIs are %g \n', DSI)
-    fprintf('cors are %g \n', mean_cor)
+    % determine if any cross significance thresholds
+    insig_DSI = all(DSI(:) < DSI_thresh);
+    sig_OSIs = any(OSI(:) > OSI_thresh);
+    sig_cors = any(mean_cor(:) > response_cor_thresh);
 
-    if wn_map
-        % try to map to white noise and plot the spatial RF
-        mapped_list = map_ei(datarun_g, datarun_wn, 'master_cell_type', os_cell_list(rgc), 'corr_threshold', ei_corr_threshold);
-        wn_cell_id = mapped_list{os_cell_indices(rgc)};
-        
-        % handle case where mapping fails
-        figure(10); clf;
-        if isempty(wn_cell_id) % this will be empty if a match was not found
-            warning('rgc failed to map')
-        else % if match found, plot the RF
-            %plot_rf(datarun_wn, wn_cell_id)
-            temp_rf = get_rf(datarun_wn, wn_cell_id);
-            temp_params = struct('filt_type','gauss','radius',filt_rad);
-            [filt_rf, ~] = rf_filtered(temp_rf, temp_params);
-            norm_rf = norm_image(filt_rf);
-            imagesc(squeeze(norm_rf(:,:,1)))
-            colormap(brewermap([],'RdBu'))
-            clim([0,1])
-            axis equal  
-            temp_title = [num2str(os_cell_list(rgc)), '-grating-', num2str(wn_cell_id), '-wn'];
-            title(temp_title);
-            drawnow
-            exportgraphics(gcf, [temp_title,'.pdf'], 'ContentType','vector')
-        end
+    if sig_OSIs && insig_DSI && sig_cors
+%            continue
+%        else
+%            if insig_DSI
+            fig_counter = 1;
+            for spat_p = 1:num_sps
+                for temp_p = 1:num_tps
+                    temp_sp = spatial_periods(spat_p);
+                    temp_tp = temp_periods(temp_p);
+                    fig_title = ['cell id: ', num2str(datarun.cell_ids(rgc)), ' SP: ', num2str(temp_sp), '; TP: ', num2str(temp_tp)];
+                    [temp_tuning, temp_spike_nums, temp_rates] = get_direction_tuning(temp_spike_times, datarun.stimulus,...
+                                                            'SP', spatial_periods(spat_p), 'TP', temp_periods(temp_p));
+                    plot_direction_tuning(temp_tuning, temp_spike_nums, datarun.stimulus, 'fig_num', fig_counter, 'fig_title', fig_title, 'fast', fast_plot)  
+                    fig_counter = fig_counter + 1;
+                end
+            end
+            fprintf('OSIs are %g \n', OSI)
+            fprintf('DSIs are %g \n', DSI)
+            fprintf('cors are %g \n', mean_cor)
+
+            if wn_map
+                % try to map to white noise and plot the spatial RF
+                mapped_list = map_ei(datarun, datarun_wn, 'master_cell_type', datarun.cell_ids(rgc), 'corr_threshold', ei_corr_threshold);
+                temp_cell_index = get_cell_indices(datarun, datarun.cell_ids(rgc));
+                wn_cell_id = mapped_list{temp_cell_index};
+                
+                % handle case where mapping fails
+                figure(10); clf;
+                if isempty(wn_cell_id) % this will be empty if a match was not found
+                    warning('rgc failed to map')
+                else % if match found, plot the RF
+                    %plot_rf(datarun_wn, wn_cell_id)
+                    temp_rf = get_rf(datarun_wn, wn_cell_id);
+                    temp_params = struct('filt_type','gauss','radius',filt_rad);
+                    [filt_rf, ~] = rf_filtered(temp_rf, temp_params);
+                    norm_rf = norm_image(filt_rf);
+                    imagesc(squeeze(norm_rf(:,:,1)))
+                    colormap(brewermap([],'RdBu'))
+                    caxis([0,1])
+                    axis equal  
+                    title(num2str(wn_cell_id))
+                end
+            end
+            
+            % get user input to keep or reject cells as OS
+            input_check = 0;
+            while input_check == 0
+                u_reply = input('keep this cell? y/n/m:', 's');
+                if strcmp(u_reply, 'y')
+                    os_cell_list = [os_cell_list, datarun.cell_ids(rgc)];
+                    input_check = 1;
+                elseif strcmp(u_reply, 'n')
+                    input_check = 1;
+                elseif strcmp(u_reply, 'm')
+                    os_maybe_list = [os_maybe_list, datarun.cell_ids(rgc)];
+                    input_check = 1;
+                else
+                    warning('input was not y/n/m \n')
+                end
+            end
     end
+
 end
-
 
 
