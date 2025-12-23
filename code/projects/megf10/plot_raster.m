@@ -6,9 +6,8 @@ function plot_raster(raster, start_time, end_time, varargin)
 % 2013-12-16
 
 p = inputParser;
-p.addParameter('raster_color', 'k', @isstring)
+p.addParameter('raster_color', 'k')
 p.parse(varargin{:});
-
     
 for j = 1:length(raster)
     SpikeTime = raster{j};

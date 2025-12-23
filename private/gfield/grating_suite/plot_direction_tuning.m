@@ -9,8 +9,8 @@ p.addParameter('save_path', '~/Desktop/', @ischar)
 p.addParameter('save_name', 'tuning_plot.pdf', @ischar)
 p.addParameter('fig_title', []);
 p.addParameter('print_for_fig', false, @islogical)
+p.addParameter('raster_color', 'k')
 p.parse(varargin{:});
-
 
 % ---- BEGIN FUNCTION ---
 
@@ -39,12 +39,12 @@ if num_dirs == 8
     % plot tuning function
     figure(p.Results.fig_num);
     subplot(3,3,5)
-    polarplot(deg2rad(directions), spike_nums);
+    polarplot(deg2rad(directions), spike_nums, 'Color', p.Results.raster_color);
     
     for g_dir = 1:num_dirs
         subplot(3,3,subplot_ind(g_dir))
         tmp_spike_times = tuning_struct(g_dir, :);
-        plot_raster(tmp_spike_times, 0, g_duration)
+        plot_raster(tmp_spike_times, 0, g_duration, 'raster_color', p.Results.raster_color)
         axis square
         xlim([0 g_duration])
     end
@@ -72,7 +72,7 @@ if num_dirs == 12
     % plot tuning function
     figure(p.Results.fig_num);
     subplot(3,3,5)
-    polarplot(deg2rad(directions), spike_nums);
+    polarplot(deg2rad(directions), spike_nums, 'Color', p.Results.raster_color);
     drawnow
 
     if p.Results.print_for_fig
@@ -85,7 +85,7 @@ if num_dirs == 12
         figure(p.Results.fig_num);
         subplot(5,5,subplot_vector(g_dir+1))
         tmp_spike_times = tuning_struct(g_dir, :);
-        plot_raster(tmp_spike_times, 0, g_duration)
+        plot_raster(tmp_spike_times, 0, g_duration, 'raster_color', p.Results.raster_color)
         axis square
         xlim([0 g_duration])
         if g_dir == 1
@@ -101,7 +101,7 @@ if num_dirs == 12
         
         if p.Results.print_for_fig
             figure(10+g_dir)
-            plot_raster(tmp_spike_times, 0, g_duration)
+            plot_raster(tmp_spike_times, 0, g_duration, 'raster_color', p.Results.raster_color)
             figure_title = ['direction ', num2str(sep_plot_nums(g_dir))];
             title(figure_title)
             save_name = ['~/Desktop/direction', num2str(sep_plot_nums(g_dir)),'.pdf'];

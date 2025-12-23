@@ -1,15 +1,33 @@
 % Script for viewing the STAs and OS plots of identified OS cells from a
 % given dataset
 
-data_list = os_datasets;
+% flag for printing out the graphics 
+make_graphics = 0;
 
-% get data 2012-10-15-0
-dset = 4;
-
-path_info = data_list(4);
-
+% cd to the os analysis directory
 cd ~/Desktop/os_analysis/
-load 2012-10-15-0_os
+
+% define the data set to inspect
+folderName = '2012-10-31-0';
+load 2012-10-31-0_os
+dset = 5; % this needs to be updated to get that dataset in os_datasets.m
+
+% get the paths to the data
+data_list = os_datasets;
+path_info = data_list(dset);
+
+% make a folder (if it does not already exist) to put plots.
+if make_graphics
+    if exist(folderName, 'dir') == 7
+        disp('Folder is on the path')
+    else
+        disp(['making folder for ', folderName])
+        mkdir(fullfile(pwd, folderName));
+    end
+end
+
+% cd into this folder.
+cd(folderName)
 
 % load stuff grating data
 datarun_g = load_data(path_info.grating_datapath);
@@ -66,17 +84,17 @@ for rgc = 1:num_rgcs
             % compute Orientation-Selective Index
             [ds_max, ds_ind] = max(temp_spike_nums);
             condensed_tuning = mean(reshape(temp_spike_nums, [num_dirs/2, 2]), 2);
-            [max_val, max_ind] = max(condensed_tuning);
+            [min_val, min_ind] = min(condensed_tuning);
             
             % handles case of 8 directions
             if num_dirs == 8
 
                 % for OS
-                orth_ind = mod(max_ind+2,4);
+                orth_ind = mod(min_ind+2,4);
                 if orth_ind == 0
                     orth_ind = 4;
                 end
-                orth_val = condensed_tuning(orth_ind);
+                max_val = condensed_tuning(orth_ind);
                 
                 % for DS
                 op_ind = mod(ds_ind+4, 8);
@@ -89,11 +107,11 @@ for rgc = 1:num_rgcs
             elseif num_dirs == 12
                 
                 % for OS
-                orth_ind = mod(max_ind+3,6);
+                orth_ind = mod(min_ind+3,6);
                 if orth_ind == 0
                     orth_ind = 6;
                 end
-                orth_val = condensed_tuning(orth_ind);
+                max_val = condensed_tuning(orth_ind);
                 
                 % for DS
                 op_ind = mod(ds_ind+6, 12);
@@ -112,10 +130,10 @@ for rgc = 1:num_rgcs
             trial_hists = zeros(length(temp_bins)-1, temp_rep_num);
             temp_spk_times = [];
             for rn = 1:temp_rep_num
-                if isempty(tuning_struct{max_ind, rn})
+                if isempty(tuning_struct{orth_ind, rn})
                     trial_hists(:, rn) = 0;
                 else
-                    temp_trial_hists = histcounts(tuning_struct{max_ind, rn},temp_bins);
+                    temp_trial_hists = histcounts(tuning_struct{orth_ind, rn},temp_bins);
                     trial_hists(:,rn) = temp_trial_hists ./ norm(temp_trial_hists);
                 end
             end
@@ -124,7 +142,7 @@ for rgc = 1:num_rgcs
             mean_cor(spat_p, temp_p) = mean(cor_matrix(diag_mask));
 
             % compute OSI and DSI for each spatial and temporal period
-            OSI(spat_p, temp_p) = (max_val - orth_val) ./ (max_val + orth_val);
+            OSI(spat_p, temp_p) = (max_val - min_val) ./ (max_val + max_val);
             DSI(spat_p, temp_p) = (ds_max - null_val) ./ (ds_max + null_val);
         end
     end
@@ -139,7 +157,9 @@ for rgc = 1:num_rgcs
                                                     'SP', spatial_periods(spat_p), 'TP', temp_periods(temp_p));
             plot_direction_tuning(temp_tuning, temp_spike_nums, datarun_g.stimulus, 'fig_num', fig_counter, 'fig_title', fig_title)  
             drawnow
-            exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'vector');
+            if make_graphics
+                exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'image');
+            end
             fig_counter = fig_counter + 1;
         end
     end
@@ -169,9 +189,12 @@ for rgc = 1:num_rgcs
             temp_title = [num2str(os_cell_list(rgc)), '-grating-', num2str(wn_cell_id), '-wn'];
             title(temp_title);
             drawnow
-            exportgraphics(gcf, [temp_title,'.pdf'], 'ContentType','vector')
+            if make_graphics
+                exportgraphics(gcf, [temp_title,'.pdf'], 'ContentType','image')
+            end
         end
     end
+    pause
 end
 
 
