@@ -1,27 +1,9 @@
 function plot_raster(raster, start_time, end_time, varargin)
-% usage: plot_raster(raster, start_time, end_time, varargin)
+% plot_raster(raster, start_time, end_time)
+% raster: nx1 cells, one cell for a trial
 %
-%   plots raster according to raster structure, start_time and end_time
-%
-%   inputs:
-%       raster          nx1 cells, one cell for a trial
-%       start_time      time (s) to start plotting in each trial
-%       end_time        time (s) to stop plotting in each trial
-%
-%   output:
-%       generates a plot object
-%
-%   optional arguments
-%       raster_color    'k'     color to plot with
-%       'fast'           false  simplifies plotting to generate plots faster
-%
-%  xyao
+% xyao
 % 2013-12-16
-% updates:
-% GDF updated on 2026-01-06
-%       added the ability to rapidly generate rasters with the 'fast'
-%       option. These rasters will be ugly, but they will plot quickly. 
-%
 
 p = inputParser;
 p.addParameter('raster_color', 'k')

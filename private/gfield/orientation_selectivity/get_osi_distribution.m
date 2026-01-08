@@ -50,7 +50,7 @@ for spat_p = 1:1
         plot_direction_tuning(temp_tuning, temp_spike_nums, datarun_g.stimulus,...
                             'fig_num', fig_counter, 'fig_title', fig_title, 'raster_color', new_orange)  
         drawnow
-        exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'image');
+        exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'vector');
         fig_counter = fig_counter + 1;
     end
 end
@@ -69,7 +69,7 @@ for spat_p = 1:1
         plot_direction_tuning(temp_tuning, temp_spike_nums, datarun_g.stimulus,...
                                 'fig_num', fig_counter, 'fig_title', fig_title, 'raster_color', new_green)  
         drawnow
-        exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'image');
+        exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'vector');
         fig_counter = fig_counter + 1;
     end
 end
@@ -88,7 +88,7 @@ for spat_p = 1:1
         plot_direction_tuning(temp_tuning, temp_spike_nums, datarun_g.stimulus,...
                                 'fig_num', fig_counter, 'fig_title', fig_title, 'raster_color', new_blue)  
         drawnow
-        exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'image');
+        exportgraphics(gcf, [fig_title, '.pdf'], 'ContentType', 'vector');
         fig_counter = fig_counter + 1;
     end
 end

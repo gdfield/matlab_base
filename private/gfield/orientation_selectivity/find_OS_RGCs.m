@@ -3,6 +3,9 @@ function [OSIs, DSIs, mean_corr] = find_OS_RGCs(datarun, cell_spec, varargin)
 %
 % usage:  [OSIs, DSI, corr_vals] = find_OS_RGCs(datarun, cell_spec, varargin)
 %
+% Note: handles cases with 8 or 12 directions. Other numbers of directions
+% would require updates.
+%
 % arguments:  datarun - datarun struct
 %           cell_spec - which cells (see get_cell_indices for options)
 %            varargin - struct or list of optional parameters (see below)
@@ -16,8 +19,15 @@ function [OSIs, DSIs, mean_corr] = find_OS_RGCs(datarun, cell_spec, varargin)
 %
 %
 % plot_tuning           true      	plot rasters for each direction and polar tuning function
+% plot_tuning_os_only   false       plots only the tuning of the cells exceeding the OSI_thresh parameter
+% OSI_thresh            0.3         threshold value for considering a cell OS
+% DSI_thresh            0.25        threshold value below which a cell will be considered non-DS (can be useful for separating DS from OS cells)
+% response_cor_thresh   0.3         threshold value above which trial-to-trail responses are considered reliable
+% export_plot           false       Use exportGraphics to print plots to disk 
+% pause                 false       pause after each cell
+% verbose               false       print extra values on each iteration
+% start_fig_num         1           figure number to start plotting with
 %
-% 
 % 2025-12 gdf: Created
 %
 
@@ -26,7 +36,7 @@ p = inputParser;
 % specify list of optional parameters
 p.addParameter('plot_tuning', true, @islogical)
 p.addParameter('plot_tuning_os_only', false, @islogical)
-p.addParameter('verbose', true, @islogical);
+p.addParameter('verbose', false, @islogical);
 p.addParameter('OSI_thresh', 0.3, @isnumeric)
 p.addParameter('DSI_thresh', 0.25, @isnumeric)
 p.addParameter('response_cor_thresh', 0.3, @isnumeric)
@@ -111,6 +121,9 @@ for rgc = 1:num_rgcs
                     op_ind = 1;
                 end
                 null_val = temp_spike_nums(op_ind);
+
+            else
+                error('grating direction number does not equal 8 or 12')
                 
             end
             
@@ -120,7 +133,6 @@ for rgc = 1:num_rgcs
             temp_bin_size = 0.1;
             temp_bins = 0:temp_bin_size:8;
             trial_hists = zeros(length(temp_bins)-1, temp_rep_num);
-            %temp_spk_times = [];
             for rn = 1:temp_rep_num
                 if isempty(tuning_struct{orth_ind, rn})
                     trial_hists(:, rn) = 0;
@@ -136,24 +148,13 @@ for rgc = 1:num_rgcs
             temp_mean_cor_val = mean(temp_cor_vals);
             mean_corr(rgc, spat_p, temp_p) = temp_mean_cor_val;
             
-
-
-            % cor_matrix = trial_hists' * trial_hists;
-            % imagesc(cor_matrix)
-            % diag_mask = ~eye(size(cor_matrix))
-            % pause
-            % size(diag_mask)
-            % pause
-            % median_corr(rgc, spat_p, temp_p) = median(cor_matrix(diag_mask))
-            % pause
-
             % compute OSI and DSI for each spatial and temporal period
             OSIs(rgc, spat_p, temp_p) = (max_val - min_val) ./ (max_val + max_val);
             DSIs(rgc, spat_p, temp_p) = (ds_max - null_val) ./ (ds_max + null_val);
         end
     end
 
-    % decide whether to plot tuning curves and rasters?
+    % decide whether to plot tuning curves and rasters
     if p.Results.plot_tuning    % is plotting on?
         if p.Results.plot_tuning_os_only    % only plot OS cells?
             % if true, determine if any cross significance thresholds
@@ -182,11 +183,13 @@ for rgc = 1:num_rgcs
         end
     end
 
+
+
     % print out values for the current cells
     if p.Results.verbose
-        fprintf('OSIs are %g \n', OSI)
-        fprintf('DSIs are %g \n', DSI)
-        fprintf('cors are %g \n', mean_cor)
+        fprintf('OSIs are %g \n', OSIs(rgc,:,:))
+        fprintf('DSIs are %g \n', DSIs(rgc, :, :))
+        fprintf('cors are %g \n', mean_corr(rgc,:,:))
     end
 
     if p.Results.pause

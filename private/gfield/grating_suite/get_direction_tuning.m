@@ -12,7 +12,8 @@ function [tuning_struct, spike_nums, spike_rates] = get_direction_tuning(spike_t
 %
 % outputs:    tuning_struct - a cell array of spike times that is
 %                             num_directions x num_repeats
-%             spike_nums    - 
+%             spike_nums    - number of spikes in each direction (cumulative)
+%             spike_rates   - spike rate in each direction
 %                           
 %
 % optional parameters, their default values, and what they specify:

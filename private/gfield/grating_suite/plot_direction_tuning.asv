@@ -2,24 +2,16 @@ function plot_direction_tuning(tuning_struct, spike_nums, stim_struct, varargin)
 %
 % usage: plot_direction_tuning(tuning_struct, spike_nums, stim_struct, varargin)
 %
-% generates plots polar tuning flanked by rasters for grating responses.
-% This function is meant to operate cooperatively with
-% 'get_tuning_direction'
+% generates plots polar tuning flanked by rasters for grating responses
 %
 % inputs
-%   tuning_struct   -   contains cell arrays of spike times organized by grating prameters (direction, spatial period, etc)
-%   spike_nums      -   spike number in each direction (see get_direction_tuning)
-%   stim_struct     -   structure containing information about stimulus -- see datarun.stimulus and the function load_stim
-%
-% outputs
-%       plot of direction tuning: rasters surrounding polar plot of tuning
-%
-%
-% optional parameters
+%   tuning_struct   -   contains cell arrays of spike times organized by
+%   grating prameters (direction, spatial period, etc)
 %
 %
 %
-% created GDF ~2000, updated and documented 2026-01-08
+%
+%
 %
 
 p = inputParser;

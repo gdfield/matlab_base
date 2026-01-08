@@ -1,5 +1,5 @@
-% Script for viewing the STAs and OS plots of identified OS cells from a
-% given dataset
+%% Script for viewing the STAs and OS plots of identified OS cells from a
+%% given dataset
 
 % flag for printing out the graphics 
 make_graphics = 0;
@@ -37,7 +37,6 @@ datarun_g = load_ei(datarun_g, 'all');
 datarun_g.names.stimulus_path = path_info.stimulus_path;
 datarun_g = load_stim(datarun_g, 'user_defined_trigger_interval', path_info.trigger_interval);
 
-
 % load WN data
 datarun_wn = load_data(path_info.wn_datapath);
 datarun_wn = load_neurons(datarun_wn);
@@ -45,7 +44,6 @@ datarun_wn = load_params(datarun_wn);
 datarun_wn = load_sta(datarun_wn, 'load_sta', 'all');
 datarun_wn = load_ei(datarun_wn, 'all');
 
-    
 % extract spatial and temporal periods from datarun
 spatial_periods = datarun_g.stimulus.params.SPATIAL_PERIOD;
 temp_periods = datarun_g.stimulus.params.TEMPORAL_PERIOD;
@@ -53,7 +51,6 @@ num_sps = length(spatial_periods);
 num_tps = length(temp_periods);
 num_dirs = length(datarun_g.stimulus.params.DIRECTION);
     
-
 % Choose and OSI threshold
 %OSI_thresh = 0.40; % threshold of OS cells
 %DSI_thresh = 0.25; % threshold for DS cells
@@ -63,90 +60,16 @@ filt_rad = 0.75;
 fast_plot = true;
 wn_map = 1; % decided whether (1) or not (0) to map to white noise
 
-
-
 num_rgcs = length(os_cell_list);
 os_cell_indices = get_cell_indices(datarun_g, os_cell_list);
 
+[OSIs, DSIs, mean_corr] = find_OS_RGCs(datarun_g, os_cell_list);
+
+
 for rgc = 1:num_rgcs
-    OSI = zeros(num_sps,num_tps);
-    DSI = zeros(num_sps, num_tps);
-    mean_cor = zeros(num_sps,num_tps);
-
-    % get spikes from an RGC and extract tuning curves
+   
     temp_spike_times = datarun_g.spikes{os_cell_indices(rgc)};
-    
-    for spat_p = 1:num_sps
-        for temp_p = 1:num_tps
-            [tuning_struct, temp_spike_nums, ~] = get_direction_tuning(temp_spike_times, datarun_g.stimulus,...
-                                                        'SP', spatial_periods(spat_p), 'TP', temp_periods(temp_p));
-              
-            % compute Orientation-Selective Index
-            [ds_max, ds_ind] = max(temp_spike_nums);
-            condensed_tuning = mean(reshape(temp_spike_nums, [num_dirs/2, 2]), 2);
-            [min_val, min_ind] = min(condensed_tuning);
-            
-            % handles case of 8 directions
-            if num_dirs == 8
 
-                % for OS
-                orth_ind = mod(min_ind+2,4);
-                if orth_ind == 0
-                    orth_ind = 4;
-                end
-                max_val = condensed_tuning(orth_ind);
-                
-                % for DS
-                op_ind = mod(ds_ind+4, 8);
-                if op_ind == 0
-                    op_ind = 1;
-                end
-                null_val = temp_spike_nums(op_ind);
-                
-            % handles case of 12 directions    
-            elseif num_dirs == 12
-                
-                % for OS
-                orth_ind = mod(min_ind+3,6);
-                if orth_ind == 0
-                    orth_ind = 6;
-                end
-                max_val = condensed_tuning(orth_ind);
-                
-                % for DS
-                op_ind = mod(ds_ind+6, 12);
-                if op_ind == 0
-                    op_ind = 1;
-                end
-                null_val = temp_spike_nums(op_ind);
-                
-            end
-            
-            % compute reliability (in the preferred
-            % orientation/direction)
-            [temp_dir_num, temp_rep_num] = size(tuning_struct);
-            temp_bin_size = 0.1;
-            temp_bins = 0:temp_bin_size:8;
-            trial_hists = zeros(length(temp_bins)-1, temp_rep_num);
-            temp_spk_times = [];
-            for rn = 1:temp_rep_num
-                if isempty(tuning_struct{orth_ind, rn})
-                    trial_hists(:, rn) = 0;
-                else
-                    temp_trial_hists = histcounts(tuning_struct{orth_ind, rn},temp_bins);
-                    trial_hists(:,rn) = temp_trial_hists ./ norm(temp_trial_hists);
-                end
-            end
-            cor_matrix = trial_hists' * trial_hists;
-            diag_mask = ~eye(size(cor_matrix));
-            mean_cor(spat_p, temp_p) = mean(cor_matrix(diag_mask));
-
-            % compute OSI and DSI for each spatial and temporal period
-            OSI(spat_p, temp_p) = (max_val - min_val) ./ (max_val + max_val);
-            DSI(spat_p, temp_p) = (ds_max - null_val) ./ (ds_max + null_val);
-        end
-    end
-    
     fig_counter = 1;
     for spat_p = 1:num_sps
         for temp_p = 1:num_tps
@@ -163,9 +86,9 @@ for rgc = 1:num_rgcs
             fig_counter = fig_counter + 1;
         end
     end
-    fprintf('OSIs are %g \n', OSI)
-    fprintf('DSIs are %g \n', DSI)
-    fprintf('cors are %g \n', mean_cor)
+    fprintf('OSIs are %g \n', OSIs(rgc,:,:))
+    fprintf('DSIs are %g \n', DSIs(rgc,:,:))
+    fprintf('cors are %g \n', mean_corr(rgc,:,:))
 
     if wn_map
         % try to map to white noise and plot the spatial RF
@@ -198,4 +121,5 @@ for rgc = 1:num_rgcs
 end
 
 
+plot_polar_tuning(datarun_g, os_cell_list)
 

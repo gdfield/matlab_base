@@ -74,14 +74,12 @@ for rgc = 1:num_rgcs
 end
 
 
-% test_var = squeeze(spike_rates(:,1,1,1:8));
-% test_var = reshape(spike_rates(:,:,:,1:8), [num_rgcs, num_sps*num_tps*num_dirs]);
-% 
-% [pcs, pc_weights, pc_vals, ~, var_exp] = pca(test_var);
-% 
-% plot(var_exp, 'ko')
-% scatter(pc_weights(:,1), pc_weights(:,3))
-% plot(pcs(:,2))
+test_var = squeeze(spike_rates(:,1,1,1:8));
+[pcs, pc_weights, pc_vals, ~, var_exp] = pca(test_var);
+
+plot(var_exp, 'ko')
+scatter(pc_weights(:,1), pc_weights(:,3))
+plot(pcs(:,5))
 
 
 % this is to close the last segment of the polar plot
