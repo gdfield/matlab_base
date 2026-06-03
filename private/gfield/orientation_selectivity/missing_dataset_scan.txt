@@ -1,0 +1,613 @@
+==================================================
+Missing-dataset scan
+base_path = /Volumes/gdf/rat-data/
+date      = 19-Apr-2026 15:17:54
+==================================================
+
+---- 2018-07-18-0 ----
+  path: /Volumes/gdf/rat-data/2018-07-18-0
+  top-level data folders (19):
+    data000-map
+    data001-map
+    data002-map
+    data003-map
+    data004-map
+    data005-map
+    data006-map
+    data007-map
+    data008-map
+    data009-LAC-analysis
+    data009-control
+    data009-control_KR
+    data009-drug1-map
+    data009-drug1-map_KR
+    data009-drug2-map
+    data009-lac
+    data009-wash1-map
+    data009-wash1-map_KR
+    data009-wash2-map
+  stimuli/ files (5):
+    .Rapp.history
+    s08.mat
+    s08.txt
+    sap.txt
+    stimuli.m
+  --- suggested pairings ---
+    grating: top/data008-map   (stim=s08.txt)   ->   WN guess: top/data007-map
+
+---- 2020-03-19-0 ----
+  path: /Volumes/gdf/rat-data/2020-03-19-0
+  top-level data folders (18):
+    data000-map
+    data000-map_MR
+    data001-map
+    data001-map_MR
+    data002-map
+    data002-map_MR
+    data003-map
+    data003-map_MR
+    data004-map
+    data004-map_MR
+    data005-map
+    data005-map_MR
+    data006
+    data006_MR
+    data007-map
+    data007-map_MR
+    data008-map
+    data009-map
+  stimuli/ files (40):
+    ._dg000.mat
+    ._dg000.txt
+    ._dg001.mat
+    ._dg001.txt
+    ._dg002.mat
+    ._dg002.txt
+    ._dg003.mat
+    ._dg003.txt
+    ._dg004.mat
+    ._dg004.txt
+    ._dg005.mat
+    ._dg005.txt
+    ._dg007.mat
+    ._dg007.txt
+    ._dg008.mat
+    ._dg008.txt
+    ._dg009.mat
+    ._dg009.txt
+    ._run_plan_2020_03_19_0.m
+    ._stimuli.m
+    dg000.mat
+    dg000.txt
+    dg001.mat
+    dg001.txt
+    dg002.mat
+    dg002.txt
+    dg003.mat
+    dg003.txt
+    dg004.mat
+    dg004.txt
+    dg005.mat
+    dg005.txt
+    dg007.mat
+    dg007.txt
+    dg008.mat
+    dg008.txt
+    dg009.mat
+    dg009.txt
+    run_plan_2020_03_19_0.m
+    stimuli.m
+  --- suggested pairings ---
+    grating: top/data000-map   (stim=dg000.txt)   ->   WN guess: (none found)
+    grating: top/data000-map_MR   (stim=dg000.txt)   ->   WN guess: (none found)
+    grating: top/data001-map   (stim=dg001.txt)   ->   WN guess: top/data000-map
+    grating: top/data001-map_MR   (stim=dg001.txt)   ->   WN guess: top/data000-map
+    grating: top/data002-map   (stim=dg002.txt)   ->   WN guess: top/data001-map
+    grating: top/data002-map_MR   (stim=dg002.txt)   ->   WN guess: top/data001-map
+    grating: top/data003-map   (stim=dg003.txt)   ->   WN guess: top/data002-map
+    grating: top/data003-map_MR   (stim=dg003.txt)   ->   WN guess: top/data002-map
+    grating: top/data004-map   (stim=dg004.txt)   ->   WN guess: top/data003-map
+    grating: top/data004-map_MR   (stim=dg004.txt)   ->   WN guess: top/data003-map
+    grating: top/data005-map   (stim=dg005.txt)   ->   WN guess: top/data004-map
+    grating: top/data005-map_MR   (stim=dg005.txt)   ->   WN guess: top/data004-map
+    grating: top/data007-map   (stim=dg007.txt)   ->   WN guess: top/data006
+    grating: top/data007-map_MR   (stim=dg007.txt)   ->   WN guess: top/data006
+    grating: top/data008-map   (stim=dg008.txt)   ->   WN guess: top/data007-map
+    grating: top/data009-map   (stim=dg009.txt)   ->   WN guess: top/data008-map
+
+---- 2021-07-13-0 ----
+  path: /Volumes/gdf/rat-data/2021-07-13-0
+  top-level data folders (7):
+    data000
+    data000-mapfromdata003
+    data001
+    data002
+    data003
+    data003-5
+    data005
+  Yass/ data folders (2):
+    Yass/data003
+    Yass/data005
+  stimuli/ files (10):
+    ._s01.mat
+    ._s01.txt
+    ._s02.mat
+    ._s02.txt
+    ._stim_2021_07_13_0 copy.m
+    s01.mat
+    s01.txt
+    s02.mat
+    s02.txt
+    stim_2021_07_13_0 copy.m
+  --- suggested pairings ---
+    grating: top/data001   (stim=s01.txt)   ->   WN guess: top/data000
+    grating: top/data002   (stim=s02.txt)   ->   WN guess: top/data001
+
+---- 2021-07-13-1 ----
+  path: /Volumes/gdf/rat-data/2021-07-13-1
+  top-level data folders (11):
+    data000
+    data001
+    data001-2-mapfrom-data004-5
+    data001-mapfrom-data004-5
+    data002
+    data002-mapfrom-data004-5
+    data003
+    data003-4-5
+    data004
+    data004-5
+    data005
+  Yass/ data folders (3):
+    Yass/data002
+    Yass/data004
+    Yass/data005
+  stimuli/ files (10):
+    ._s01.mat
+    ._s01.txt
+    ._s03.mat
+    ._s03.txt
+    ._stim_2021_07_13_1.m
+    s01.mat
+    s01.txt
+    s03.mat
+    s03.txt
+    stim_2021_07_13_1.m
+  --- suggested pairings ---
+    grating: top/data001   (stim=s01.txt)   ->   WN guess: top/data000
+    grating: top/data001-2-mapfrom-data004-5   (stim=s01.txt)   ->   WN guess: top/data000
+    grating: top/data001-mapfrom-data004-5   (stim=s01.txt)   ->   WN guess: top/data000
+    grating: top/data003   (stim=s03.txt)   ->   WN guess: top/data002
+    grating: top/data003-4-5   (stim=s03.txt)   ->   WN guess: top/data002
+
+---- 2021-07-15-0 ----
+  path: /Volumes/gdf/rat-data/2021-07-15-0
+  top-level data folders (2):
+    data000
+    data001
+  stimuli/ files (14):
+    ._s01.mat
+    ._s01.txt
+    ._s02.mat
+    ._s02.txt
+    ._s03.mat
+    ._s03.txt
+    ._stim_2021_07_15_0.m
+    s01.mat
+    s01.txt
+    s02.mat
+    s02.txt
+    s03.mat
+    s03.txt
+    stim_2021_07_15_0.m
+  --- suggested pairings ---
+    grating: top/data001   (stim=s01.txt)   ->   WN guess: top/data000
+
+---- 2021-12-28-0 ----
+  path: /Volumes/gdf/rat-data/2021-12-28-0
+  top-level data folders (8):
+    data000
+    data001
+    data002
+    data003
+    data004
+    data005
+    data006
+    data007
+  Yass/ data folders (2):
+    Yass/data000
+    Yass/data007
+  stimuli/ files (14):
+    ._s01.mat
+    ._s01.txt
+    ._s04.mat
+    ._s04.txt
+    ._stim_2021_12_28.m
+    s01.mat
+    s01.txt
+    s03.mat
+    s03.txt
+    s04.mat
+    s04.txt
+    s06.mat
+    s06.txt
+    stim_2021_12_28.m
+  --- suggested pairings ---
+    grating: top/data001   (stim=s01.txt)   ->   WN guess: top/data000
+    grating: top/data003   (stim=s03.txt)   ->   WN guess: top/data002
+    grating: top/data004   (stim=s04.txt)   ->   WN guess: top/data003
+    grating: top/data006   (stim=s06.txt)   ->   WN guess: top/data005
+
+---- 2023-07-19-0 ----
+  path: /Volumes/gdf/rat-data/2023-07-19-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stimuli_2023-07-19-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stimuli_2023-07-19-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-07-27-0 ----
+  path: /Volumes/gdf/rat-data/2023-07-27-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stimuli_2023-07-27-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stimuli_2023-07-27-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-08-09-0 ----
+  path: /Volumes/gdf/rat-data/2023-08-09-0
+  top-level data folders (5):
+    data001
+    data002
+    data003
+    data004
+    data004_AMR
+  [no stimuli/ folder]
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-08-24-0 ----
+  path: /Volumes/gdf/rat-data/2023-08-24-0
+  top-level data folders (7):
+    data000
+    data001
+    data002
+    data003
+    data004
+    data005
+    data006
+  stimuli/ files (19):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim2022-12-14-0.m
+    ._stim3_xlm
+    ._stim5.mat
+    ._stim5.txt
+    ._stim6.mat
+    ._stim6.txt
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim2022-12-14-0.m
+    stim5.mat
+    stim5.txt
+    stim6.mat
+    stim6.txt
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-10-04-0 ----
+  path: /Volumes/gdf/rat-data/2023-10-04-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim_2023-10-04-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim_2023-10-04-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-10-17-0 ----
+  path: /Volumes/gdf/rat-data/2023-10-17-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (18):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim6.mat
+    ._stim6.txt
+    ._stim7.mat
+    ._stim7.txt
+    ._stimuli_2023-10-17-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim6.mat
+    stim6.txt
+    stim7.mat
+    stim7.txt
+    stimuli_2023-10-17-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-10-20-0 ----
+  path: /Volumes/gdf/rat-data/2023-10-20-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim_2023-10-20-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim_2023-10-20-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-10-27-0 ----
+  path: /Volumes/gdf/rat-data/2023-10-27-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim_2023-10-27-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim_2023-10-27-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-10-31-0 ----
+  path: /Volumes/gdf/rat-data/2023-10-31-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim_2023-10-31-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim_2023-10-31-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2023-11-08-0 ----
+  path: /Volumes/gdf/rat-data/2023-11-08-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim_2023-11-08-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim_2023-11-08-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2024-01-17-0 ----
+  path: /Volumes/gdf/rat-data/2024-01-17-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim_2023-11-08-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim_2023-11-08-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2024-01-30-0 ----
+  path: /Volumes/gdf/rat-data/2024-01-30-0
+  top-level data folders (5):
+    data000
+    data001
+    data002
+    data003
+    data004
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stim_2024-01-30-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stim_2024-01-30-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2024-02-19-0 ----
+  path: /Volumes/gdf/rat-data/2024-02-19-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._s01.mat
+    ._s01.txt
+    ._s02.mat
+    ._s02.txt
+    ._stim_2024-02-19.m
+    s01.mat
+    s01.txt
+    s02.mat
+    s02.txt
+    stim_2024-02-19.m
+  --- suggested pairings ---
+    grating: top/data001   (stim=s01.txt)   ->   WN guess: top/data000
+    grating: top/data002   (stim=s02.txt)   ->   WN guess: top/data001
+
+---- 2024-05-08-0 ----
+  path: /Volumes/gdf/rat-data/2024-05-08-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._2024-05-08-0_stim.m
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    2024-05-08-0_stim.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2024-08-06-0 ----
+  path: /Volumes/gdf/rat-data/2024-08-06-0
+  top-level data folders (5):
+    data000
+    data001
+    data002
+    data003
+    data004
+  stimuli/ files (10):
+     stimuli_2024-08-06-0.m
+    ._ stimuli_2024-08-06-0.m
+    ._stim2.mat
+    ._stim2.txt
+    ._stim3.mat
+    ._stim3.txt
+    stim2.mat
+    stim2.txt
+    stim3.mat
+    stim3.txt
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2024-08-13-0 ----
+  path: /Volumes/gdf/rat-data/2024-08-13-0
+  top-level data folders (5):
+    data000
+    data001
+    data002
+    data003
+    data004
+  stimuli/ files (10):
+     stimuli_2024-08-13-0.m
+    ._ stimuli_2024-08-13-0.m
+    ._stim2.mat
+    ._stim2.txt
+    ._stim3.mat
+    ._stim3.txt
+    stim2.mat
+    stim2.txt
+    stim3.mat
+    stim3.txt
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+---- 2024-11-14-0 ----
+  path: /Volumes/gdf/rat-data/2024-11-14-0
+  top-level data folders (4):
+    data000
+    data001
+    data002
+    data003
+  stimuli/ files (10):
+    ._stim1.mat
+    ._stim1.txt
+    ._stim2.mat
+    ._stim2.txt
+    ._stimuli_2024-11-14-0.m
+    stim1.mat
+    stim1.txt
+    stim2.mat
+    stim2.txt
+    stimuli_2024-11-14-0.m
+  --- suggested pairings ---
+    (no dataNNN folder matched a stimuli/ file -- manual review needed)
+
+Log written to:
+  /Users/gfield/Development/matlab_base/private/gfield/orientation_selectivity/preprocess/../missing_dataset_scan.txt

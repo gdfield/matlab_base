@@ -1,0 +1,1483 @@
+21  All/off/unclassified/ noisy /
+62  All/off/unclassified/ noisy /
+88  All/off/unclassified/ noisy /
+100  All/off/unclassified/ noisy /
+115  All/off/unclassified/ noisy /
+124  All/off/unclassified/ noisy /
+159  All/off/unclassified/ noisy /
+165  All/off/unclassified/ noisy /
+179  All/off/unclassified/ noisy /
+180  All/off/unclassified/ noisy /
+211  All/off/unclassified/ noisy /
+262  All/off/unclassified/ noisy /
+278  All/off/unclassified/ noisy /
+298  All/off/unclassified/ noisy /
+322  All/off/unclassified/ noisy /
+325  All/off/unclassified/ noisy /
+504  All/off/unclassified/ noisy /
+515  All/off/unclassified/ noisy /
+545  All/off/unclassified/ noisy /
+547  All/off/unclassified/ noisy /
+568  All/off/unclassified/ noisy /
+690  All/off/unclassified/ noisy /
+771  All/off/unclassified/ noisy /
+778  All/off/unclassified/ noisy /
+783  All/off/unclassified/ noisy /
+878  All/off/unclassified/ noisy /
+924  All/off/unclassified/ noisy /
+961  All/off/unclassified/ noisy /
+1016  All/off/unclassified/ noisy /
+1118  All/off/unclassified/ noisy /
+1122  All/off/unclassified/ noisy /
+1140  All/off/unclassified/ noisy /
+1143  All/off/unclassified/ noisy /
+1147  All/off/unclassified/ noisy /
+1150  All/off/unclassified/ noisy /
+1156  All/off/unclassified/ noisy /
+1159  All/off/unclassified/ noisy /
+1161  All/off/unclassified/ noisy /
+1244  All/off/unclassified/ noisy /
+1349  All/off/unclassified/ noisy /
+1441  All/off/unclassified/ noisy /
+1537  All/off/unclassified/ noisy /
+1549  All/off/unclassified/ noisy /
+1564  All/off/unclassified/ noisy /
+1566  All/off/unclassified/ noisy /
+1581  All/off/unclassified/ noisy /
+1658  All/off/unclassified/ noisy /
+1750  All/off/unclassified/ noisy /
+1765  All/off/unclassified/ noisy /
+1766  All/off/unclassified/ noisy /
+1798  All/off/unclassified/ noisy /
+1825  All/off/unclassified/ noisy /
+1864  All/off/unclassified/ noisy /
+1872  All/off/unclassified/ noisy /
+1895  All/off/unclassified/ noisy /
+1899  All/off/unclassified/ noisy /
+1904  All/off/unclassified/ noisy /
+10  All/off/unclassified/
+20  All/off/unclassified/
+25  All/off/unclassified/
+26  All/off/unclassified/
+31  All/off/unclassified/
+32  All/off/unclassified/
+46  All/off/unclassified/
+56  All/off/unclassified/
+58  All/off/unclassified/
+63  All/off/unclassified/
+67  All/off/unclassified/
+69  All/off/unclassified/
+85  All/off/unclassified/
+96  All/off/unclassified/
+99  All/off/unclassified/
+102  All/off/unclassified/
+121  All/off/unclassified/
+128  All/off/unclassified/
+131  All/off/unclassified/
+137  All/off/unclassified/
+141  All/off/unclassified/
+142  All/off/unclassified/
+147  All/off/unclassified/
+152  All/off/unclassified/
+158  All/off/unclassified/
+161  All/off/unclassified/
+163  All/off/unclassified/
+167  All/off/unclassified/
+172  All/off/unclassified/
+178  All/off/unclassified/
+182  All/off/unclassified/
+189  All/off/unclassified/
+190  All/off/unclassified/
+191  All/off/unclassified/
+193  All/off/unclassified/
+194  All/off/unclassified/
+206  All/off/unclassified/
+210  All/off/unclassified/
+220  All/off/unclassified/
+222  All/off/unclassified/
+229  All/off/unclassified/
+235  All/off/unclassified/
+240  All/off/unclassified/
+271  All/off/unclassified/
+273  All/off/unclassified/
+287  All/off/unclassified/
+308  All/off/unclassified/
+310  All/off/unclassified/
+314  All/off/unclassified/
+318  All/off/unclassified/
+320  All/off/unclassified/
+335  All/off/unclassified/
+337  All/off/unclassified/
+343  All/off/unclassified/
+346  All/off/unclassified/
+349  All/off/unclassified/
+353  All/off/unclassified/
+368  All/off/unclassified/
+377  All/off/unclassified/
+381  All/off/unclassified/
+383  All/off/unclassified/
+385  All/off/unclassified/
+391  All/off/unclassified/
+393  All/off/unclassified/
+397  All/off/unclassified/
+399  All/off/unclassified/
+400  All/off/unclassified/
+401  All/off/unclassified/
+409  All/off/unclassified/
+419  All/off/unclassified/
+441  All/off/unclassified/
+442  All/off/unclassified/
+444  All/off/unclassified/
+452  All/off/unclassified/
+459  All/off/unclassified/
+460  All/off/unclassified/
+464  All/off/unclassified/
+465  All/off/unclassified/
+472  All/off/unclassified/
+474  All/off/unclassified/
+484  All/off/unclassified/
+493  All/off/unclassified/
+494  All/off/unclassified/
+510  All/off/unclassified/
+513  All/off/unclassified/
+514  All/off/unclassified/
+520  All/off/unclassified/
+526  All/off/unclassified/
+527  All/off/unclassified/
+530  All/off/unclassified/
+531  All/off/unclassified/
+533  All/off/unclassified/
+534  All/off/unclassified/
+542  All/off/unclassified/
+543  All/off/unclassified/
+546  All/off/unclassified/
+554  All/off/unclassified/
+560  All/off/unclassified/
+578  All/off/unclassified/
+581  All/off/unclassified/
+582  All/off/unclassified/
+593  All/off/unclassified/
+598  All/off/unclassified/
+599  All/off/unclassified/
+601  All/off/unclassified/
+602  All/off/unclassified/
+605  All/off/unclassified/
+606  All/off/unclassified/
+610  All/off/unclassified/
+613  All/off/unclassified/
+615  All/off/unclassified/
+627  All/off/unclassified/
+629  All/off/unclassified/
+635  All/off/unclassified/
+639  All/off/unclassified/
+640  All/off/unclassified/
+643  All/off/unclassified/
+644  All/off/unclassified/
+651  All/off/unclassified/
+653  All/off/unclassified/
+662  All/off/unclassified/
+669  All/off/unclassified/
+672  All/off/unclassified/
+675  All/off/unclassified/
+687  All/off/unclassified/
+700  All/off/unclassified/
+706  All/off/unclassified/
+717  All/off/unclassified/
+722  All/off/unclassified/
+726  All/off/unclassified/
+732  All/off/unclassified/
+735  All/off/unclassified/
+741  All/off/unclassified/
+742  All/off/unclassified/
+745  All/off/unclassified/
+754  All/off/unclassified/
+755  All/off/unclassified/
+758  All/off/unclassified/
+759  All/off/unclassified/
+779  All/off/unclassified/
+782  All/off/unclassified/
+791  All/off/unclassified/
+804  All/off/unclassified/
+811  All/off/unclassified/
+812  All/off/unclassified/
+813  All/off/unclassified/
+815  All/off/unclassified/
+817  All/off/unclassified/
+818  All/off/unclassified/
+819  All/off/unclassified/
+840  All/off/unclassified/
+842  All/off/unclassified/
+844  All/off/unclassified/
+848  All/off/unclassified/
+855  All/off/unclassified/
+859  All/off/unclassified/
+860  All/off/unclassified/
+868  All/off/unclassified/
+874  All/off/unclassified/
+875  All/off/unclassified/
+883  All/off/unclassified/
+884  All/off/unclassified/
+889  All/off/unclassified/
+890  All/off/unclassified/
+892  All/off/unclassified/
+897  All/off/unclassified/
+902  All/off/unclassified/
+905  All/off/unclassified/
+913  All/off/unclassified/
+915  All/off/unclassified/
+917  All/off/unclassified/
+921  All/off/unclassified/
+926  All/off/unclassified/
+931  All/off/unclassified/
+932  All/off/unclassified/
+933  All/off/unclassified/
+935  All/off/unclassified/
+940  All/off/unclassified/
+951  All/off/unclassified/
+956  All/off/unclassified/
+962  All/off/unclassified/
+972  All/off/unclassified/
+982  All/off/unclassified/
+984  All/off/unclassified/
+988  All/off/unclassified/
+991  All/off/unclassified/
+997  All/off/unclassified/
+1000  All/off/unclassified/
+1003  All/off/unclassified/
+1005  All/off/unclassified/
+1015  All/off/unclassified/
+1020  All/off/unclassified/
+1022  All/off/unclassified/
+1026  All/off/unclassified/
+1027  All/off/unclassified/
+1028  All/off/unclassified/
+1031  All/off/unclassified/
+1037  All/off/unclassified/
+1041  All/off/unclassified/
+1068  All/off/unclassified/
+1071  All/off/unclassified/
+1097  All/off/unclassified/
+1100  All/off/unclassified/
+1102  All/off/unclassified/
+1104  All/off/unclassified/
+1105  All/off/unclassified/
+1108  All/off/unclassified/
+1109  All/off/unclassified/
+1116  All/off/unclassified/
+1126  All/off/unclassified/
+1132  All/off/unclassified/
+1133  All/off/unclassified/
+1134  All/off/unclassified/
+1137  All/off/unclassified/
+1139  All/off/unclassified/
+1142  All/off/unclassified/
+1149  All/off/unclassified/
+1153  All/off/unclassified/
+1164  All/off/unclassified/
+1166  All/off/unclassified/
+1167  All/off/unclassified/
+1177  All/off/unclassified/
+1214  All/off/unclassified/
+1223  All/off/unclassified/
+1224  All/off/unclassified/
+1226  All/off/unclassified/
+1227  All/off/unclassified/
+1228  All/off/unclassified/
+1240  All/off/unclassified/
+1242  All/off/unclassified/
+1243  All/off/unclassified/
+1248  All/off/unclassified/
+1254  All/off/unclassified/
+1258  All/off/unclassified/
+1265  All/off/unclassified/
+1269  All/off/unclassified/
+1270  All/off/unclassified/
+1272  All/off/unclassified/
+1273  All/off/unclassified/
+1284  All/off/unclassified/
+1290  All/off/unclassified/
+1297  All/off/unclassified/
+1302  All/off/unclassified/
+1319  All/off/unclassified/
+1324  All/off/unclassified/
+1333  All/off/unclassified/
+1359  All/off/unclassified/
+1374  All/off/unclassified/
+1375  All/off/unclassified/
+1376  All/off/unclassified/
+1377  All/off/unclassified/
+1392  All/off/unclassified/
+1405  All/off/unclassified/
+1411  All/off/unclassified/
+1412  All/off/unclassified/
+1421  All/off/unclassified/
+1422  All/off/unclassified/
+1425  All/off/unclassified/
+1430  All/off/unclassified/
+1432  All/off/unclassified/
+1433  All/off/unclassified/
+1434  All/off/unclassified/
+1445  All/off/unclassified/
+1449  All/off/unclassified/
+1450  All/off/unclassified/
+1466  All/off/unclassified/
+1471  All/off/unclassified/
+1475  All/off/unclassified/
+1478  All/off/unclassified/
+1483  All/off/unclassified/
+1484  All/off/unclassified/
+1489  All/off/unclassified/
+1492  All/off/unclassified/
+1497  All/off/unclassified/
+1498  All/off/unclassified/
+1501  All/off/unclassified/
+1503  All/off/unclassified/
+1505  All/off/unclassified/
+1506  All/off/unclassified/
+1509  All/off/unclassified/
+1512  All/off/unclassified/
+1515  All/off/unclassified/
+1516  All/off/unclassified/
+1519  All/off/unclassified/
+1526  All/off/unclassified/
+1531  All/off/unclassified/
+1533  All/off/unclassified/
+1534  All/off/unclassified/
+1538  All/off/unclassified/
+1539  All/off/unclassified/
+1541  All/off/unclassified/
+1543  All/off/unclassified/
+1547  All/off/unclassified/
+1548  All/off/unclassified/
+1550  All/off/unclassified/
+1557  All/off/unclassified/
+1560  All/off/unclassified/
+1563  All/off/unclassified/
+1565  All/off/unclassified/
+1570  All/off/unclassified/
+1577  All/off/unclassified/
+1579  All/off/unclassified/
+1592  All/off/unclassified/
+1597  All/off/unclassified/
+1598  All/off/unclassified/
+1602  All/off/unclassified/
+1603  All/off/unclassified/
+1605  All/off/unclassified/
+1615  All/off/unclassified/
+1617  All/off/unclassified/
+1623  All/off/unclassified/
+1625  All/off/unclassified/
+1632  All/off/unclassified/
+1665  All/off/unclassified/
+1667  All/off/unclassified/
+1668  All/off/unclassified/
+1671  All/off/unclassified/
+1674  All/off/unclassified/
+1678  All/off/unclassified/
+1693  All/off/unclassified/
+1697  All/off/unclassified/
+1701  All/off/unclassified/
+1707  All/off/unclassified/
+1712  All/off/unclassified/
+1719  All/off/unclassified/
+1721  All/off/unclassified/
+1732  All/off/unclassified/
+1738  All/off/unclassified/
+1748  All/off/unclassified/
+1776  All/off/unclassified/
+1780  All/off/unclassified/
+1787  All/off/unclassified/
+1791  All/off/unclassified/
+1800  All/off/unclassified/
+1801  All/off/unclassified/
+1807  All/off/unclassified/
+1809  All/off/unclassified/
+1812  All/off/unclassified/
+1814  All/off/unclassified/
+1820  All/off/unclassified/
+1829  All/off/unclassified/
+1831  All/off/unclassified/
+1832  All/off/unclassified/
+1838  All/off/unclassified/
+1852  All/off/unclassified/
+1856  All/off/unclassified/
+1857  All/off/unclassified/
+1859  All/off/unclassified/
+1870  All/off/unclassified/
+697  All/off/type 2/ReaChR/
+3  All/off/type 2/
+33  All/off/type 2/
+81  All/off/type 2/
+151  All/off/type 2/
+177  All/off/type 2/
+201  All/off/type 2/
+228  All/off/type 2/
+307  All/off/type 2/
+336  All/off/type 2/
+467  All/off/type 2/
+521  All/off/type 2/
+647  All/off/type 2/
+699  All/off/type 2/
+713  All/off/type 2/
+744  All/off/type 2/
+847  All/off/type 2/
+954  All/off/type 2/
+955  All/off/type 2/
+1014  All/off/type 2/
+1219  All/off/type 2/
+1387  All/off/type 2/
+1444  All/off/type 2/
+1448  All/off/type 2/
+16  All/off/brisk sustained/
+41  All/off/brisk sustained/
+55  All/off/brisk sustained/
+75  All/off/brisk sustained/
+156  All/off/brisk sustained/
+198  All/off/brisk sustained/
+232  All/off/brisk sustained/
+238  All/off/brisk sustained/
+246  All/off/brisk sustained/
+291  All/off/brisk sustained/
+539  All/off/brisk sustained/
+544  All/off/brisk sustained/
+551  All/off/brisk sustained/
+583  All/off/brisk sustained/
+625  All/off/brisk sustained/
+708  All/off/brisk sustained/
+747  All/off/brisk sustained/
+785  All/off/brisk sustained/
+850  All/off/brisk sustained/
+867  All/off/brisk sustained/
+882  All/off/brisk sustained/
+936  All/off/brisk sustained/
+937  All/off/brisk sustained/
+960  All/off/brisk sustained/
+969  All/off/brisk sustained/
+1090  All/off/brisk sustained/
+1195  All/off/brisk sustained/
+1316  All/off/brisk sustained/
+1467  All/off/brisk sustained/
+1468  All/off/brisk sustained/
+1487  All/off/brisk sustained/
+1620  All/off/brisk sustained/
+1823  All/off/brisk sustained/
+207  All/off/brisk transient/ReaChR/
+251  All/off/brisk transient/ReaChR/
+380  All/off/brisk transient/ReaChR/
+478  All/off/brisk transient/ReaChR/
+516  All/off/brisk transient/ReaChR/
+994  All/off/brisk transient/ReaChR/
+1585  All/off/brisk transient/ReaChR/
+1855  All/off/brisk transient/ReaChR/
+17  All/off/brisk transient/
+185  All/off/brisk transient/
+208  All/off/brisk transient/
+272  All/off/brisk transient/
+451  All/off/brisk transient/
+487  All/off/brisk transient/
+503  All/off/brisk transient/
+614  All/off/brisk transient/
+677  All/off/brisk transient/
+701  All/off/brisk transient/
+714  All/off/brisk transient/
+794  All/off/brisk transient/
+928  All/off/brisk transient/
+977  All/off/brisk transient/
+1004  All/off/brisk transient/
+1042  All/off/brisk transient/
+1057  All/off/brisk transient/
+1091  All/off/brisk transient/
+1098  All/off/brisk transient/
+1234  All/off/brisk transient/
+1289  All/off/brisk transient/
+1380  All/off/brisk transient/
+1396  All/off/brisk transient/
+1472  All/off/brisk transient/
+1558  All/off/brisk transient/
+1622  All/off/brisk transient/
+29  All/off/transient/
+45  All/off/transient/
+52  All/off/transient/
+254  All/off/transient/
+306  All/off/transient/
+327  All/off/transient/
+450  All/off/transient/
+508  All/off/transient/
+511  All/off/transient/
+561  All/off/transient/
+579  All/off/transient/
+724  All/off/transient/
+738  All/off/transient/
+992  All/off/transient/
+1039  All/off/transient/
+1048  All/off/transient/
+1065  All/off/transient/
+1187  All/off/transient/
+1193  All/off/transient/
+1314  All/off/transient/
+1343  All/off/transient/
+1371  All/off/transient/
+1418  All/off/transient/
+1439  All/off/transient/
+1443  All/off/transient/
+1454  All/off/transient/
+1629  All/off/transient/
+1653  All/off/transient/
+1695  All/off/transient/
+1789  All/off/transient/
+1030  All/off/type 1/ReaChR/
+482  All/off/type 1/
+518  All/off/type 1/
+922  All/off/type 1/
+1183  All/off/type 1/
+1287  All/off/type 1/
+1542  All/off/type 1/
+15  All/off/interesting auto/
+849  All/off/interesting auto/
+879  All/off/interesting auto/
+908  All/off/interesting auto/
+1252  All/off/interesting auto/
+1767  All/off/interesting auto/
+1774  All/off/interesting auto/
+1777  All/off/interesting auto/
+1882  All/off/interesting auto/
+1891  All/off/interesting auto/
+110  All/off/large cells/
+216  All/off/large cells/
+427  All/off/large cells/
+838  All/off/large cells/
+877  All/off/large cells/
+1209  All/off/large cells/
+1356  All/off/large cells/
+1502  All/off/large cells/
+1511  All/off/large cells/
+1630  All/off/large cells/
+1815  All/off/large cells/
+101  All/unclassified ReaChR/long latency R response/
+458  All/unclassified ReaChR/long latency R response/
+1021  All/unclassified ReaChR/long latency R response/
+1024  All/unclassified ReaChR/long latency R response/
+1146  All/unclassified ReaChR/long latency R response/
+1378  All/unclassified ReaChR/long latency R response/
+1437  All/unclassified ReaChR/long latency R response/
+230  All/unclassified ReaChR/weak R rsponse/
+648  All/unclassified ReaChR/weak R rsponse/
+780  All/unclassified ReaChR/weak R rsponse/
+822  All/unclassified ReaChR/weak R rsponse/
+1883  All/unclassified ReaChR/weak R rsponse/
+1414  All/unclassified ReaChR/local-edge ReaChR/
+1481  All/unclassified ReaChR/local-edge ReaChR/
+14  All/unclassified ReaChR/on ReaChR/
+345  All/unclassified ReaChR/on ReaChR/
+395  All/unclassified ReaChR/on ReaChR/
+628  All/unclassified ReaChR/on ReaChR/
+766  All/unclassified ReaChR/on ReaChR/
+857  All/unclassified ReaChR/on ReaChR/
+1185  All/unclassified ReaChR/on ReaChR/
+1388  All/unclassified ReaChR/on ReaChR/
+1527  All/unclassified ReaChR/on ReaChR/
+23  All/unclassified ReaChR/off ReaChR/
+133  All/unclassified ReaChR/off ReaChR/
+490  All/unclassified ReaChR/off ReaChR/
+572  All/unclassified ReaChR/off ReaChR/
+634  All/unclassified ReaChR/off ReaChR/
+1113  All/unclassified ReaChR/off ReaChR/
+1334  All/unclassified ReaChR/off ReaChR/
+1600  All/unclassified ReaChR/off ReaChR/
+1  All/weak 2.5/
+8  All/weak 2.5/
+30  All/weak 2.5/
+42  All/weak 2.5/
+53  All/weak 2.5/
+57  All/weak 2.5/
+59  All/weak 2.5/
+61  All/weak 2.5/
+71  All/weak 2.5/
+78  All/weak 2.5/
+79  All/weak 2.5/
+80  All/weak 2.5/
+97  All/weak 2.5/
+113  All/weak 2.5/
+117  All/weak 2.5/
+127  All/weak 2.5/
+140  All/weak 2.5/
+150  All/weak 2.5/
+171  All/weak 2.5/
+205  All/weak 2.5/
+217  All/weak 2.5/
+226  All/weak 2.5/
+233  All/weak 2.5/
+243  All/weak 2.5/
+256  All/weak 2.5/
+266  All/weak 2.5/
+275  All/weak 2.5/
+294  All/weak 2.5/
+313  All/weak 2.5/
+326  All/weak 2.5/
+340  All/weak 2.5/
+359  All/weak 2.5/
+361  All/weak 2.5/
+362  All/weak 2.5/
+372  All/weak 2.5/
+373  All/weak 2.5/
+374  All/weak 2.5/
+375  All/weak 2.5/
+405  All/weak 2.5/
+408  All/weak 2.5/
+414  All/weak 2.5/
+416  All/weak 2.5/
+423  All/weak 2.5/
+428  All/weak 2.5/
+430  All/weak 2.5/
+438  All/weak 2.5/
+440  All/weak 2.5/
+461  All/weak 2.5/
+469  All/weak 2.5/
+470  All/weak 2.5/
+475  All/weak 2.5/
+483  All/weak 2.5/
+489  All/weak 2.5/
+492  All/weak 2.5/
+501  All/weak 2.5/
+506  All/weak 2.5/
+541  All/weak 2.5/
+550  All/weak 2.5/
+586  All/weak 2.5/
+595  All/weak 2.5/
+604  All/weak 2.5/
+622  All/weak 2.5/
+626  All/weak 2.5/
+641  All/weak 2.5/
+642  All/weak 2.5/
+652  All/weak 2.5/
+659  All/weak 2.5/
+673  All/weak 2.5/
+715  All/weak 2.5/
+737  All/weak 2.5/
+761  All/weak 2.5/
+775  All/weak 2.5/
+776  All/weak 2.5/
+796  All/weak 2.5/
+803  All/weak 2.5/
+807  All/weak 2.5/
+832  All/weak 2.5/
+836  All/weak 2.5/
+837  All/weak 2.5/
+869  All/weak 2.5/
+893  All/weak 2.5/
+899  All/weak 2.5/
+911  All/weak 2.5/
+918  All/weak 2.5/
+930  All/weak 2.5/
+958  All/weak 2.5/
+973  All/weak 2.5/
+976  All/weak 2.5/
+990  All/weak 2.5/
+1010  All/weak 2.5/
+1052  All/weak 2.5/
+1058  All/weak 2.5/
+1064  All/weak 2.5/
+1066  All/weak 2.5/
+1070  All/weak 2.5/
+1074  All/weak 2.5/
+1083  All/weak 2.5/
+1085  All/weak 2.5/
+1141  All/weak 2.5/
+1160  All/weak 2.5/
+1170  All/weak 2.5/
+1178  All/weak 2.5/
+1196  All/weak 2.5/
+1218  All/weak 2.5/
+1220  All/weak 2.5/
+1229  All/weak 2.5/
+1245  All/weak 2.5/
+1249  All/weak 2.5/
+1257  All/weak 2.5/
+1259  All/weak 2.5/
+1260  All/weak 2.5/
+1264  All/weak 2.5/
+1278  All/weak 2.5/
+1288  All/weak 2.5/
+1299  All/weak 2.5/
+1308  All/weak 2.5/
+1311  All/weak 2.5/
+1318  All/weak 2.5/
+1322  All/weak 2.5/
+1323  All/weak 2.5/
+1325  All/weak 2.5/
+1329  All/weak 2.5/
+1336  All/weak 2.5/
+1338  All/weak 2.5/
+1341  All/weak 2.5/
+1345  All/weak 2.5/
+1346  All/weak 2.5/
+1361  All/weak 2.5/
+1362  All/weak 2.5/
+1393  All/weak 2.5/
+1404  All/weak 2.5/
+1406  All/weak 2.5/
+1407  All/weak 2.5/
+1410  All/weak 2.5/
+1417  All/weak 2.5/
+1424  All/weak 2.5/
+1436  All/weak 2.5/
+1438  All/weak 2.5/
+1458  All/weak 2.5/
+1460  All/weak 2.5/
+1465  All/weak 2.5/
+1476  All/weak 2.5/
+1510  All/weak 2.5/
+1522  All/weak 2.5/
+1528  All/weak 2.5/
+1535  All/weak 2.5/
+1555  All/weak 2.5/
+1569  All/weak 2.5/
+1590  All/weak 2.5/
+1594  All/weak 2.5/
+1595  All/weak 2.5/
+1643  All/weak 2.5/
+1651  All/weak 2.5/
+1655  All/weak 2.5/
+1673  All/weak 2.5/
+1679  All/weak 2.5/
+1682  All/weak 2.5/
+1684  All/weak 2.5/
+1685  All/weak 2.5/
+1686  All/weak 2.5/
+1699  All/weak 2.5/
+1700  All/weak 2.5/
+1703  All/weak 2.5/
+1714  All/weak 2.5/
+1723  All/weak 2.5/
+1724  All/weak 2.5/
+1725  All/weak 2.5/
+1727  All/weak 2.5/
+1731  All/weak 2.5/
+1736  All/weak 2.5/
+1746  All/weak 2.5/
+1749  All/weak 2.5/
+1752  All/weak 2.5/
+1756  All/weak 2.5/
+1761  All/weak 2.5/
+1772  All/weak 2.5/
+1785  All/weak 2.5/
+1792  All/weak 2.5/
+1795  All/weak 2.5/
+1799  All/weak 2.5/
+1805  All/weak 2.5/
+1830  All/weak 2.5/
+1833  All/weak 2.5/
+1846  All/weak 2.5/
+1847  All/weak 2.5/
+1854  All/weak 2.5/
+1858  All/weak 2.5/
+1863  All/weak 2.5/
+1865  All/weak 2.5/
+1867  All/weak 2.5/
+1874  All/weak 2.5/
+1886  All/weak 2.5/
+1900  All/weak 2.5/
+4  All/on/brisk transient/
+50  All/on/brisk transient/
+64  All/on/brisk transient/
+76  All/on/brisk transient/
+77  All/on/brisk transient/
+92  All/on/brisk transient/
+281  All/on/brisk transient/
+333  All/on/brisk transient/
+354  All/on/brisk transient/
+355  All/on/brisk transient/
+386  All/on/brisk transient/
+388  All/on/brisk transient/
+592  All/on/brisk transient/
+680  All/on/brisk transient/
+685  All/on/brisk transient/
+707  All/on/brisk transient/
+711  All/on/brisk transient/
+718  All/on/brisk transient/
+730  All/on/brisk transient/
+743  All/on/brisk transient/
+756  All/on/brisk transient/
+790  All/on/brisk transient/
+1009  All/on/brisk transient/
+1013  All/on/brisk transient/
+1040  All/on/brisk transient/
+1073  All/on/brisk transient/
+1094  All/on/brisk transient/
+1129  All/on/brisk transient/
+1130  All/on/brisk transient/
+1180  All/on/brisk transient/
+1191  All/on/brisk transient/
+1241  All/on/brisk transient/
+1326  All/on/brisk transient/
+1382  All/on/brisk transient/
+1416  All/on/brisk transient/
+1453  All/on/brisk transient/
+1473  All/on/brisk transient/
+1479  All/on/brisk transient/
+1586  All/on/brisk transient/
+1587  All/on/brisk transient/
+1616  All/on/brisk transient/
+1631  All/on/brisk transient/
+1633  All/on/brisk transient/
+1641  All/on/brisk transient/
+1660  All/on/brisk transient/
+1661  All/on/brisk transient/
+1669  All/on/brisk transient/
+1171  All/on/type 2 /ReaChR/
+267  All/on/type 2 /
+571  All/on/type 2 /
+691  All/on/type 2 /
+784  All/on/type 2 /
+826  All/on/type 2 /
+1310  All/on/type 2 /
+1459  All/on/type 2 /
+104  All/on/transient /
+119  All/on/transient /
+286  All/on/transient /
+289  All/on/transient /
+312  All/on/transient /
+315  All/on/transient /
+316  All/on/transient /
+382  All/on/transient /
+457  All/on/transient /
+463  All/on/transient /
+538  All/on/transient /
+576  All/on/transient /
+597  All/on/transient /
+609  All/on/transient /
+734  All/on/transient /
+772  All/on/transient /
+845  All/on/transient /
+851  All/on/transient /
+864  All/on/transient /
+876  All/on/transient /
+880  All/on/transient /
+949  All/on/transient /
+1034  All/on/transient /
+1046  All/on/transient /
+1092  All/on/transient /
+1131  All/on/transient /
+1165  All/on/transient /
+1172  All/on/transient /
+1208  All/on/transient /
+1212  All/on/transient /
+1321  All/on/transient /
+1350  All/on/transient /
+1355  All/on/transient /
+1390  All/on/transient /
+1513  All/on/transient /
+1607  All/on/transient /
+1741  All/on/transient /
+1758  All/on/transient /
+1810  All/on/transient /
+168  All/on/unclasified/noisy/
+169  All/on/unclasified/noisy/
+900  All/on/unclasified/noisy/
+1061  All/on/unclasified/noisy/
+1207  All/on/unclasified/noisy/
+1233  All/on/unclasified/noisy/
+1636  All/on/unclasified/noisy/
+1754  All/on/unclasified/noisy/
+1903  All/on/unclasified/noisy/
+7  All/on/unclasified/
+11  All/on/unclasified/
+13  All/on/unclasified/
+18  All/on/unclasified/
+22  All/on/unclasified/
+27  All/on/unclasified/
+28  All/on/unclasified/
+39  All/on/unclasified/
+43  All/on/unclasified/
+44  All/on/unclasified/
+48  All/on/unclasified/
+60  All/on/unclasified/
+83  All/on/unclasified/
+84  All/on/unclasified/
+114  All/on/unclasified/
+118  All/on/unclasified/
+120  All/on/unclasified/
+122  All/on/unclasified/
+125  All/on/unclasified/
+126  All/on/unclasified/
+129  All/on/unclasified/
+130  All/on/unclasified/
+134  All/on/unclasified/
+139  All/on/unclasified/
+146  All/on/unclasified/
+148  All/on/unclasified/
+154  All/on/unclasified/
+157  All/on/unclasified/
+162  All/on/unclasified/
+164  All/on/unclasified/
+166  All/on/unclasified/
+170  All/on/unclasified/
+181  All/on/unclasified/
+184  All/on/unclasified/
+188  All/on/unclasified/
+192  All/on/unclasified/
+195  All/on/unclasified/
+196  All/on/unclasified/
+204  All/on/unclasified/
+209  All/on/unclasified/
+213  All/on/unclasified/
+223  All/on/unclasified/
+234  All/on/unclasified/
+237  All/on/unclasified/
+241  All/on/unclasified/
+249  All/on/unclasified/
+252  All/on/unclasified/
+253  All/on/unclasified/
+257  All/on/unclasified/
+258  All/on/unclasified/
+265  All/on/unclasified/
+269  All/on/unclasified/
+274  All/on/unclasified/
+277  All/on/unclasified/
+280  All/on/unclasified/
+283  All/on/unclasified/
+285  All/on/unclasified/
+290  All/on/unclasified/
+297  All/on/unclasified/
+299  All/on/unclasified/
+302  All/on/unclasified/
+303  All/on/unclasified/
+305  All/on/unclasified/
+309  All/on/unclasified/
+319  All/on/unclasified/
+334  All/on/unclasified/
+358  All/on/unclasified/
+360  All/on/unclasified/
+363  All/on/unclasified/
+364  All/on/unclasified/
+366  All/on/unclasified/
+369  All/on/unclasified/
+376  All/on/unclasified/
+379  All/on/unclasified/
+389  All/on/unclasified/
+392  All/on/unclasified/
+398  All/on/unclasified/
+411  All/on/unclasified/
+412  All/on/unclasified/
+417  All/on/unclasified/
+418  All/on/unclasified/
+420  All/on/unclasified/
+425  All/on/unclasified/
+445  All/on/unclasified/
+448  All/on/unclasified/
+453  All/on/unclasified/
+454  All/on/unclasified/
+455  All/on/unclasified/
+468  All/on/unclasified/
+486  All/on/unclasified/
+498  All/on/unclasified/
+499  All/on/unclasified/
+517  All/on/unclasified/
+524  All/on/unclasified/
+535  All/on/unclasified/
+536  All/on/unclasified/
+540  All/on/unclasified/
+556  All/on/unclasified/
+562  All/on/unclasified/
+563  All/on/unclasified/
+564  All/on/unclasified/
+565  All/on/unclasified/
+587  All/on/unclasified/
+590  All/on/unclasified/
+594  All/on/unclasified/
+603  All/on/unclasified/
+611  All/on/unclasified/
+617  All/on/unclasified/
+624  All/on/unclasified/
+630  All/on/unclasified/
+632  All/on/unclasified/
+637  All/on/unclasified/
+645  All/on/unclasified/
+655  All/on/unclasified/
+663  All/on/unclasified/
+668  All/on/unclasified/
+682  All/on/unclasified/
+683  All/on/unclasified/
+688  All/on/unclasified/
+689  All/on/unclasified/
+709  All/on/unclasified/
+712  All/on/unclasified/
+719  All/on/unclasified/
+733  All/on/unclasified/
+739  All/on/unclasified/
+750  All/on/unclasified/
+751  All/on/unclasified/
+765  All/on/unclasified/
+768  All/on/unclasified/
+769  All/on/unclasified/
+770  All/on/unclasified/
+792  All/on/unclasified/
+795  All/on/unclasified/
+798  All/on/unclasified/
+827  All/on/unclasified/
+829  All/on/unclasified/
+834  All/on/unclasified/
+839  All/on/unclasified/
+843  All/on/unclasified/
+856  All/on/unclasified/
+858  All/on/unclasified/
+873  All/on/unclasified/
+885  All/on/unclasified/
+887  All/on/unclasified/
+895  All/on/unclasified/
+903  All/on/unclasified/
+907  All/on/unclasified/
+909  All/on/unclasified/
+912  All/on/unclasified/
+914  All/on/unclasified/
+916  All/on/unclasified/
+925  All/on/unclasified/
+929  All/on/unclasified/
+939  All/on/unclasified/
+944  All/on/unclasified/
+952  All/on/unclasified/
+953  All/on/unclasified/
+965  All/on/unclasified/
+967  All/on/unclasified/
+974  All/on/unclasified/
+995  All/on/unclasified/
+998  All/on/unclasified/
+1008  All/on/unclasified/
+1012  All/on/unclasified/
+1029  All/on/unclasified/
+1051  All/on/unclasified/
+1060  All/on/unclasified/
+1075  All/on/unclasified/
+1077  All/on/unclasified/
+1082  All/on/unclasified/
+1088  All/on/unclasified/
+1093  All/on/unclasified/
+1106  All/on/unclasified/
+1111  All/on/unclasified/
+1115  All/on/unclasified/
+1127  All/on/unclasified/
+1135  All/on/unclasified/
+1148  All/on/unclasified/
+1162  All/on/unclasified/
+1168  All/on/unclasified/
+1175  All/on/unclasified/
+1189  All/on/unclasified/
+1190  All/on/unclasified/
+1194  All/on/unclasified/
+1198  All/on/unclasified/
+1201  All/on/unclasified/
+1202  All/on/unclasified/
+1206  All/on/unclasified/
+1215  All/on/unclasified/
+1216  All/on/unclasified/
+1230  All/on/unclasified/
+1238  All/on/unclasified/
+1246  All/on/unclasified/
+1247  All/on/unclasified/
+1251  All/on/unclasified/
+1253  All/on/unclasified/
+1256  All/on/unclasified/
+1262  All/on/unclasified/
+1263  All/on/unclasified/
+1274  All/on/unclasified/
+1277  All/on/unclasified/
+1281  All/on/unclasified/
+1293  All/on/unclasified/
+1296  All/on/unclasified/
+1298  All/on/unclasified/
+1303  All/on/unclasified/
+1332  All/on/unclasified/
+1337  All/on/unclasified/
+1339  All/on/unclasified/
+1340  All/on/unclasified/
+1344  All/on/unclasified/
+1351  All/on/unclasified/
+1363  All/on/unclasified/
+1364  All/on/unclasified/
+1369  All/on/unclasified/
+1370  All/on/unclasified/
+1386  All/on/unclasified/
+1389  All/on/unclasified/
+1401  All/on/unclasified/
+1408  All/on/unclasified/
+1426  All/on/unclasified/
+1435  All/on/unclasified/
+1455  All/on/unclasified/
+1461  All/on/unclasified/
+1469  All/on/unclasified/
+1477  All/on/unclasified/
+1486  All/on/unclasified/
+1490  All/on/unclasified/
+1491  All/on/unclasified/
+1493  All/on/unclasified/
+1504  All/on/unclasified/
+1507  All/on/unclasified/
+1518  All/on/unclasified/
+1551  All/on/unclasified/
+1552  All/on/unclasified/
+1554  All/on/unclasified/
+1559  All/on/unclasified/
+1567  All/on/unclasified/
+1580  All/on/unclasified/
+1591  All/on/unclasified/
+1596  All/on/unclasified/
+1599  All/on/unclasified/
+1609  All/on/unclasified/
+1611  All/on/unclasified/
+1618  All/on/unclasified/
+1619  All/on/unclasified/
+1628  All/on/unclasified/
+1638  All/on/unclasified/
+1642  All/on/unclasified/
+1644  All/on/unclasified/
+1691  All/on/unclasified/
+1696  All/on/unclasified/
+1698  All/on/unclasified/
+1710  All/on/unclasified/
+1717  All/on/unclasified/
+1718  All/on/unclasified/
+1755  All/on/unclasified/
+1778  All/on/unclasified/
+1788  All/on/unclasified/
+1790  All/on/unclasified/
+1797  All/on/unclasified/
+1802  All/on/unclasified/
+1808  All/on/unclasified/
+1816  All/on/unclasified/
+1818  All/on/unclasified/
+1821  All/on/unclasified/
+1837  All/on/unclasified/
+1839  All/on/unclasified/
+1841  All/on/unclasified/
+1848  All/on/unclasified/
+1861  All/on/unclasified/
+1877  All/on/unclasified/
+1889  All/on/unclasified/
+1890  All/on/unclasified/
+1894  All/on/unclasified/
+1902  All/on/unclasified/
+106  All/on/type 1/ReaChR/
+197  All/on/type 1/ReaChR/
+664  All/on/type 1/ReaChR/
+5  All/on/type 1/
+86  All/on/type 1/
+507  All/on/type 1/
+788  All/on/type 1/
+1357  All/on/type 1/
+1456  All/on/type 1/
+1462  All/on/type 1/
+91  All/on/triphasic/ReaChR/
+109  All/on/triphasic/
+342  All/on/triphasic/
+548  All/on/triphasic/
+591  All/on/triphasic/
+752  All/on/triphasic/
+898  All/on/triphasic/
+941  All/on/triphasic/
+980  All/on/triphasic/
+985  All/on/triphasic/
+1211  All/on/triphasic/
+1237  All/on/triphasic/
+1282  All/on/triphasic/
+1304  All/on/triphasic/
+1306  All/on/triphasic/
+1452  All/on/triphasic/
+1662  All/on/triphasic/
+1722  All/on/triphasic/
+89  All/on/large cells/nc453/
+90  All/on/large cells/nc453/
+199  All/on/large cells/nc453/
+365  All/on/large cells/nc453/
+774  All/on/large cells/nc453/
+787  All/on/large cells/nc453/
+871  All/on/large cells/nc453/
+1006  All/on/large cells/nc453/
+1205  All/on/large cells/nc453/
+1536  All/on/large cells/nc453/
+1621  All/on/large cells/nc453/
+404  All/on/large cells/
+727  All/on/large cells/
+923  All/on/large cells/
+407  All/on/brisk sustained/
+816  All/on/brisk sustained/
+1018  All/on/brisk sustained/
+1049  All/on/brisk sustained/
+1050  All/on/brisk sustained/
+1099  All/on/brisk sustained/
+1169  All/on/brisk sustained/
+1553  All/on/brisk sustained/
+38  All/ds/right/nc67/
+116  All/ds/right/nc67/
+357  All/ds/right/nc67/
+473  All/ds/right/nc67/
+525  All/ds/right/nc67/
+569  All/ds/right/nc67/
+646  All/ds/right/nc67/
+650  All/ds/right/nc67/
+656  All/ds/right/nc67/
+716  All/ds/right/nc67/
+825  All/ds/right/nc67/
+854  All/ds/right/nc67/
+1078  All/ds/right/nc67/
+1110  All/ds/right/nc67/
+1138  All/ds/right/nc67/
+1186  All/ds/right/nc67/
+1232  All/ds/right/nc67/
+1358  All/ds/right/nc67/
+1413  All/ds/right/nc67/
+1572  All/ds/right/nc67/
+1589  All/ds/right/nc67/
+1656  All/ds/right/nc67/
+1675  All/ds/right/nc67/
+1720  All/ds/right/nc67/
+54  All/ds/right/
+94  All/ds/right/
+108  All/ds/right/
+263  All/ds/right/
+295  All/ds/right/
+323  All/ds/right/
+328  All/ds/right/
+616  All/ds/right/
+671  All/ds/right/
+820  All/ds/right/
+828  All/ds/right/
+1173  All/ds/right/
+1176  All/ds/right/
+1213  All/ds/right/
+1328  All/ds/right/
+1420  All/ds/right/
+1496  All/ds/right/
+1521  All/ds/right/
+1634  All/ds/right/
+1647  All/ds/right/
+1663  All/ds/right/
+1745  All/ds/right/
+284  All/ds/up/nc68/
+332  All/ds/up/nc68/
+339  All/ds/up/nc68/
+424  All/ds/up/nc68/
+588  All/ds/up/nc68/
+710  All/ds/up/nc68/
+835  All/ds/up/nc68/
+852  All/ds/up/nc68/
+865  All/ds/up/nc68/
+891  All/ds/up/nc68/
+934  All/ds/up/nc68/
+942  All/ds/up/nc68/
+945  All/ds/up/nc68/
+979  All/ds/up/nc68/
+1054  All/ds/up/nc68/
+1076  All/ds/up/nc68/
+1096  All/ds/up/nc68/
+1124  All/ds/up/nc68/
+1397  All/ds/up/nc68/
+1540  All/ds/up/nc68/
+1593  All/ds/up/nc68/
+1784  All/ds/up/nc68/
+1835  All/ds/up/nc68/
+98  All/ds/up/
+292  All/ds/up/
+341  All/ds/up/
+435  All/ds/up/
+449  All/ds/up/
+694  All/ds/up/
+789  All/ds/up/
+1373  All/ds/up/
+1381  All/ds/up/
+1488  All/ds/up/
+1804  All/ds/up/
+1842  All/ds/up/
+49  All/ds/down/nc70/
+51  All/ds/down/nc70/
+215  All/ds/down/nc70/
+221  All/ds/down/nc70/
+225  All/ds/down/nc70/
+247  All/ds/down/nc70/
+296  All/ds/down/nc70/
+300  All/ds/down/nc70/
+480  All/ds/down/nc70/
+870  All/ds/down/nc70/
+910  All/ds/down/nc70/
+938  All/ds/down/nc70/
+947  All/ds/down/nc70/
+957  All/ds/down/nc70/
+1019  All/ds/down/nc70/
+1032  All/ds/down/nc70/
+1047  All/ds/down/nc70/
+1107  All/ds/down/nc70/
+1136  All/ds/down/nc70/
+1231  All/ds/down/nc70/
+1267  All/ds/down/nc70/
+1395  All/ds/down/nc70/
+1400  All/ds/down/nc70/
+1423  All/ds/down/nc70/
+1428  All/ds/down/nc70/
+1451  All/ds/down/nc70/
+1480  All/ds/down/nc70/
+1494  All/ds/down/nc70/
+1514  All/ds/down/nc70/
+1525  All/ds/down/nc70/
+1578  All/ds/down/nc70/
+1769  All/ds/down/nc70/
+1851  All/ds/down/nc70/
+259  All/ds/down/maybe ON from ds run/
+350  All/ds/down/maybe ON from ds run/
+728  All/ds/down/maybe ON from ds run/
+1072  All/ds/down/maybe ON from ds run/
+1582  All/ds/down/maybe ON from ds run/
+1614  All/ds/down/maybe ON from ds run/
+1659  All/ds/down/maybe ON from ds run/
+1676  All/ds/down/maybe ON from ds run/
+1728  All/ds/down/maybe ON from ds run/
+806  All/ds/down/ReaChR/
+12  All/ds/left/
+144  All/ds/left/
+242  All/ds/left/
+250  All/ds/left/
+321  All/ds/left/
+661  All/ds/left/
+767  All/ds/left/
+805  All/ds/left/
+830  All/ds/left/
+1063  All/ds/left/
+1295  All/ds/left/
+1463  All/ds/left/
+1606  All/ds/left/
+1794  All/ds/left/
+1813  All/ds/left/
+236  All/os/horizontal/simple/ReaChR/
+1881  All/os/horizontal/simple/ReaChR/
+2  All/os/horizontal/simple/
+231  All/os/horizontal/simple/
+437  All/os/horizontal/simple/
+446  All/os/horizontal/simple/
+497  All/os/horizontal/simple/
+549  All/os/horizontal/simple/
+566  All/os/horizontal/simple/
+618  All/os/horizontal/simple/
+1144  All/os/horizontal/simple/
+1192  All/os/horizontal/simple/
+1236  All/os/horizontal/simple/
+1300  All/os/horizontal/simple/
+1391  All/os/horizontal/simple/
+1398  All/os/horizontal/simple/
+1402  All/os/horizontal/simple/
+1442  All/os/horizontal/simple/
+1447  All/os/horizontal/simple/
+1524  All/os/horizontal/simple/
+1544  All/os/horizontal/simple/
+93  All/os/horizontal/nc2/
+512  All/os/horizontal/nc2/
+567  All/os/horizontal/nc2/
+577  All/os/horizontal/nc2/
+633  All/os/horizontal/nc2/
+740  All/os/horizontal/nc2/
+846  All/os/horizontal/nc2/
+1053  All/os/horizontal/nc2/
+1342  All/os/horizontal/nc2/
+1530  All/os/horizontal/nc2/
+1869  All/os/horizontal/nc2/
+174  All/os/vertical/complex/
+186  All/os/vertical/complex/
+347  All/os/vertical/complex/
+462  All/os/vertical/complex/
+943  All/os/vertical/complex/
+1125  All/os/vertical/complex/
+1222  All/os/vertical/complex/
+1608  All/os/vertical/complex/
+394  All/os/vertical/
+502  All/os/vertical/
+665  All/os/vertical/
+676  All/os/vertical/
+781  All/os/vertical/
+986  All/os/vertical/
+1055  All/os/vertical/
+1095  All/os/vertical/
+1210  All/os/vertical/
+1419  All/os/vertical/
+1556  All/os/vertical/
+1743  All/os/vertical/
+1796  All/os/vertical/
+1822  All/os/vertical/
+1827  All/os/vertical/
+1834  All/os/vertical/
+1879  All/os/vertical/
+1868  All/os/diogonal/right/ReaChR/
+72  All/os/diogonal/right/
+293  All/os/diogonal/right/
+476  All/os/diogonal/right/
+537  All/os/diogonal/right/
+619  All/os/diogonal/right/
+1089  All/os/diogonal/right/
+1305  All/os/diogonal/right/
+1354  All/os/diogonal/right/
+1546  All/os/diogonal/right/
+1043  All/os/diogonal/left/
+1280  All/os/diogonal/left/
+1470  All/os/diogonal/left/
+760  All/ON-OFF/type 1/ReaChR/
+422  All/ON-OFF/type 1/
+558  All/ON-OFF/type 1/
+853  All/ON-OFF/type 1/
+1179  All/ON-OFF/type 1/
+66  All/ON-OFF/ReaChR/
+155  All/ON-OFF/ReaChR/
+324  All/ON-OFF/ReaChR/
+574  All/ON-OFF/ReaChR/
+1735  All/ON-OFF/ReaChR/
+34  All/duplicates/
+35  All/duplicates/
+244  All/duplicates/
+245  All/duplicates/
+279  All/duplicates/
+311  All/duplicates/
+317  All/duplicates/
+384  All/duplicates/
+410  All/duplicates/
+434  All/duplicates/
+443  All/duplicates/
+481  All/duplicates/
+575  All/duplicates/
+585  All/duplicates/
+623  All/duplicates/
+636  All/duplicates/
+762  All/duplicates/
+773  All/duplicates/
+793  All/duplicates/
+821  All/duplicates/
+866  All/duplicates/
+919  All/duplicates/
+950  All/duplicates/
+1017  All/duplicates/
+1033  All/duplicates/
+1038  All/duplicates/
+1152  All/duplicates/
+1199  All/duplicates/
+1200  All/duplicates/
+1239  All/duplicates/
+1508  All/duplicates/
+1626  All/duplicates/
+1664  All/duplicates/
+1692  All/duplicates/
+1708  All/duplicates/
+1768  All/duplicates/
+1770  All/duplicates/
+1826  All/duplicates/
+1836  All/duplicates/
+1843  All/duplicates/
+1845  All/duplicates/
+1853  All/duplicates/
+1871  All/duplicates/
+1887  All/duplicates/
+138  All/ei noise/
+439  All/ei noise/
+678  All/ei noise/
+833  All/ei noise/
+841  All/ei noise/
+1062  All/ei noise/
+1275  All/ei noise/
+1353  All/ei noise/
+1431  All/ei noise/
+1500  All/ei noise/
+1716  All/ei noise/
+1849  All/ei noise/

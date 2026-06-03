@@ -23,10 +23,10 @@ function rf_areas = get_rf_areas_from_marks(datarun, cell_spec, varargin)
 p = inputParser;
 
 % specify list of optional parameters
-p.addParameter('micron_sq_per_stixel', 25, @isnumeric);
+p.addParameter('micron_sq_per_stixel', 5.5^2, @isnumeric);
 p.addParameter('area_method', 'hull');
 p.addParameter('rfs_to_use', [])
-p.addParameter('stixel_thresh', 4.5, @isnumeric)
+p.addParameter('stixel_thresh', 4.0, @isnumeric)
 p.parse(varargin{:});
 
 temp_indices = get_cell_indices(datarun, cell_spec);
@@ -61,6 +61,9 @@ for rgc = 1:length(temp_indices)
             if isempty(tempY)
                 rf_areas(rgc) = NaN;
                 warning(['RGC ', num2str(datarun.cell_ids(temp_indices(rgc))), ' in ', datarun.names.short_name, ' has no sig stixels'])
+            elseif length(tempY) <3
+                rf_areas(rgc) = NaN; % Assign NaN for areas with less than 3 points
+                warning(['RGC ', num2str(datarun.cell_ids(temp_indices(rgc))), ' in ', datarun.names.short_name, ' has less than 3 sig stixels']);
             else
                 [~, temp_area] = convhull(tempX,tempY);
                 rf_areas(rgc) = temp_area .* p.Results.micron_sq_per_stixel;

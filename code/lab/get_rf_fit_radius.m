@@ -26,9 +26,9 @@ function radius = get_rf_fit_radius(datarun, cell_spec, varargin)
 p = inputParser;
 
 % specify list of optional parameters
-p.addParamValue('fits_to_use', 'vision');
-p.addParamValue('units', 'pixels');
-p.addParamValue('microns_per_pixel', 5.5);
+p.addParameter('fits_to_use', 'vision');
+p.addParameter('units', 'pixels',@(x) ismember(x, {'pixels', 'microns'}));
+p.addParameter('microns_per_pixel', 5.5, @isnumeric);
 p.parse(varargin{:});
 
 fits_to_use = p.Results.fits_to_use;

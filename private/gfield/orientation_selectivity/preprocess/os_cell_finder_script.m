@@ -15,7 +15,7 @@ data_list = os_datasets('experiment', 'all');
 
 num_datasets = length(data_list)
 
-dset = 10
+dset = 1
 
 for dset = 1:num_datasets
     

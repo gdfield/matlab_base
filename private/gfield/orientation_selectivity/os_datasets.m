@@ -15,7 +15,7 @@ temp_index = 1;
 
 % 2022-12-21-0 
 data_list(temp_index).grating_datapath = [path_prefix, '2022-12-21-0/Yass/data001/data001'];
-data_list(temp_index).stimulus_path = [path_prefix, '2022-12-21-0/stimuli/stim1.txt'];
+data_list(temp_index).stimulus_path = [path_prefix, '2022-12-21-0/stimuli/s01.txt'];
 data_list(temp_index).trigger_interval = 12;
 data_list(temp_index).wn_datapath = [path_prefix, '2022-12-21-0/Yass/data000/data000'];
 temp_index = temp_index +1;

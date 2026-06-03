@@ -1,4 +1,4 @@
-function [filt_summary, params] = rf_filtered(summary, params)
+function [filt_summary, params] = rf_filtered(summary, varargin)
 % rf_filtered     Filter an STA spatial summary
 %
 % usage:  result = rf_filtered(summary, params)
@@ -35,16 +35,26 @@ function [filt_summary, params] = rf_filtered(summary, params)
 
 % SET UP OPTIONAL ARGUMENTS
 
+p = inputParser;
+addParameter(p, 'filt_type', 'gauss')
+addParameter(p, 'filter_size', [])
+addParameter(p, 'radius', 0.75, @isnumeric)
+p.parse(varargin{:});
+
+% get params struct
+params = p.Results;
+
+
 % if not specified, make params empty
-if ~exist('params','var');params = [];end
+%if ~exist('params','var');params = [];end
 
 % specify default parameters
-defaults.filt_type = 'gauss';
-defaults.filter_size = [];
-defaults.radius = 0.75;
+%defaults.filt_type = 'gauss';
+%defaults.filter_size = [];
+%defaults.radius = 0.75;
 
 % combine user and default parameters
-params = default_params( defaults, params);
+%params = default_params( defaults, params);
 
 % if filter type field is empty, revert to default
 if isempty(params.filt_type)

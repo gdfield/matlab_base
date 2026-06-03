@@ -8,13 +8,11 @@ function tc_stat_struct = get_tc_stats(datarun, cell_type, varargin)
 %               cell_type - names of cell types to use
 %            
 %
-% outputs:      rf_stat_struct.
-%               rf_mean_radius - mean radius for cell_type, if cell_type
-%                               lists multiple types, rf_mean_radius is a vector
-%               rf_ste_radius - ste radius for cell_type, if cell_type
-%                               lists multiple types, rf_mean_radius is a vector
-%               rf_std_radius - std radius for cell_type, if cell_type
-%                               lists multiple types, rf_mean_radius is a vector
+% outputs:      tc_stat_struct.
+%                   time to peak
+%                   time to zero 
+%                   degree of transience 
+%                   time to trough
 %
 % optional params, their default values, and what they specify:
 %
