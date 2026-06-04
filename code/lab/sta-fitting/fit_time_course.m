@@ -29,25 +29,25 @@ p = inputParser;
 p.addRequired('time_course', @isnumeric);
 
 % time course information
-p.addParamValue('initial_scale_one', [], @isnumeric);
-p.addParamValue('initial_scale_two', [], @isnumeric);
-p.addParamValue('initial_tau_one', [], @isnumeric);
-p.addParamValue('initial_tau_two', [], @isnumeric);
-p.addParamValue('initial_n_one_filters', 6, @isnumeric);
-p.addParamValue('initial_n_two_filters', 6, @isnumeric);
+p.addParameter('initial_scale_one', [], @isnumeric);
+p.addParameter('initial_scale_two', [], @isnumeric);
+p.addParameter('initial_tau_one', [], @isnumeric);
+p.addParameter('initial_tau_two', [], @isnumeric);
+p.addParameter('initial_n_one_filters', 6, @isnumeric);
+p.addParameter('initial_n_two_filters', 6, @isnumeric);
 
 % time course parameters to vary
-p.addParamValue('fit_scale_one', true, @islogical);
-p.addParamValue('fit_scale_two', true, @islogical);
-p.addParamValue('fit_tau_one', true, @islogical);
-p.addParamValue('fit_tau_two', true, @islogical);
-p.addParamValue('fit_n_one_filters', true, @islogical);
-p.addParamValue('fit_n_two_filters', true, @islogical);
+p.addParameter('fit_scale_one', true, @islogical);
+p.addParameter('fit_scale_two', true, @islogical);
+p.addParameter('fit_tau_one', true, @islogical);
+p.addParameter('fit_tau_two', true, @islogical);
+p.addParameter('fit_n_one_filters', true, @islogical);
+p.addParameter('fit_n_two_filters', true, @islogical);
 
-p.addParamValue('verbose', false, @islogical);
+p.addParameter('verbose', false, @islogical);
 
 % fiting options
-p.addParamValue('optim',{'TolFun',0.0001,'Display','off', 'MaxIter', 100000, 'MaxFunEvals', 100000});
+p.addParameter('optim',{'TolFun',0.0001,'Display','off', 'MaxIter', 100000, 'MaxFunEvals', 100000});
 
 p.parse(time_course, varargin{:});
 
