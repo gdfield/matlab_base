@@ -1,53 +1,61 @@
-%datapath = '/Volumes/FieldLab/Chichilnisky/Analysis/controls/20130401A/chunk1/kilosort25/kilosort25';
 
-
+% load the paths for the data
 datapaths = get_nerve_crush_data('cohort', 'control');
 
+% figure out how many data sets to loop over
 num_dsets = length(datapaths.paths);
+
+% Define parameters of the analysis
+filt_rad = 0.75; % units of stixels
+verbose = false; % plot stuff if true
+num_dims_to_plot = 4; % number of singular value pairs to plot
+num_time_steps = 24; % truncate time to help computation
+starting_frame = 30 - num_time_steps; % part of truncation
+microns_per_pixel = 5.5; % set for the data set
+space_time_cutoff = 0.60; % threshold for including in the space-time group
+
+
+% loop over data sets
 for dset = 1:num_dsets
 
-    % load data
+    % load data 
     datarun = load_data(datapaths.paths{dset});
     datarun = load_params(datarun);
     datarun = load_neurons(datarun);
     datarun = load_sta(datarun, 'load_sta', 'all');
     datarun = load_ei(datarun, 'all', 'array_type', 512);
     
-    % setup some stuff
+    % compute STA summaries
     num_rgcs = length(datarun.cell_ids);
     marks_params.thresh = 3.5;
     datarun = get_sta_summaries(datarun, 'all', 'marks_params', marks_params);
     
     % set filter radius
-    filt_rad = 0.75; % units of stixels
-    verbose = 1;
-    num_dims_to_plot = 4;
-    num_time_steps = 24;
-    starting_frame = 30 - num_time_steps;
-    microns_per_pixel = 5.5;
     pixels_per_stixel = datarun.stimulus.stixel_height;
     
-    
+    % define cell types to include in analysis: 'all' will be all of them.
     cell_type = 'all';
     temp_indices = get_cell_indices(datarun, cell_type);
     
+    % loop over RGCs
     num_rgcs = length(temp_indices);
-    cnt = 1;
-    % loop through the STAs for each cell and compute the SVD
+    cnt = 1; % counter to count the number of space-time separable cells.
     for rgc = 1:num_rgcs
+
+        % get the STA
         temp_sta = datarun.stas.stas{temp_indices(rgc)};
     
+        % compute the size of the STA and store the values
         [x_dim, y_dim, color_dim, num_frames]= size(temp_sta);
     
         % check the color dimension and squeeze accordinging
         if color_dim == 1
             temp_sta = squeeze(temp_sta);
-    
         elseif color_dim == 3
             temp_sta = squeeze(temp_sta(:,:,2,:));
-    
         end
     
+        % filter each frame of the STA to reduce noise
         filt_sta = zeros(x_dim, y_dim, num_time_steps);
         for fm = 1:num_time_steps
             temp_frame = rf_filtered(temp_sta(:,:,fm+starting_frame), 'radius', filt_rad);
@@ -64,6 +72,7 @@ for dset = 1:num_dsets
         explainedVariance = diag(S).^2 / sum(diag(S).^2);
         datarun.stas.explained_variance{rgc} = explainedVariance;
     
+        % if verbose it true, PLOT the following:
         if verbose
     
             % view the first several dimensions of the SVD
@@ -87,25 +96,34 @@ for dset = 1:num_dsets
             title(temp_title)
             xlabel('dimensions')
             ylabel('variance explained')
+            axis([0 25 0 1])
         
-            pause
+            % pause time
+            pause(0.5)
+
         end
     
-        if explainedVariance(1) > 0.67
+        %  if the rank 1 description is > threshold val, keep that cell
+        %  index
+        if explainedVariance(1) > space_time_cutoff
             separable_cell_list(cnt) = temp_indices(rgc);
             cnt = cnt +1;
         end
     
     end
     
+    % store the cell IDs of the space-time separable cells
     sep_cell_ids = datarun.cell_ids(separable_cell_list);
+
+    % keep track of how many there are
     num_sep_rgcs = length(separable_cell_list);
     
-    
+    % get the radii and the areas from the STAs of the space-time separable
+    % cells
     rf_radii = get_rf_fit_radius(datarun, sep_cell_ids, 'fits_to_use', 'vision', 'units', 'microns');
     rf_areas = get_rf_areas_from_marks(datarun, sep_cell_ids);
     
-    
+    % get the time-to-zero (ttz) of the cells.
     ttz = zeros(1,num_sep_rgcs);
     for rgc = 1:num_sep_rgcs
     
@@ -119,16 +137,18 @@ for dset = 1:num_dsets
             ttz(rgc) = ((temp_ttz * 0.01)+4) * 16.7;
     end
     
+    % store these values for each dataset (dset)
     rf_summaries(dset).rf_radii = rf_radii;
     rf_summaries(dset).rf_areas = rf_areas;
     rf_summaries(dset).ttz = ttz;
 
 end
 
+% plot distributions of things
 for dset = 1:num_dsets
     % histogram of times-to-zero
     % cumulative
-    figure(1)
+    figure(3)
     [temp_counts, bin_edges] = histcounts(rf_summaries(dset).ttz, 50);
     ttz_cumulative = cumsum(temp_counts) ./ sum(temp_counts);
     plot(bin_edges(2:51), ttz_cumulative)
@@ -136,7 +156,7 @@ for dset = 1:num_dsets
     title('time to zero')
     
     % histogram of RF radii
-    figure(2)
+    figure(4)
     [temp_counts, bin_edges] = histcounts(rf_summaries(dset).rf_radii, 50);
     ttz_cumulative = cumsum(temp_counts) ./ sum(temp_counts);
     plot(bin_edges(2:51), ttz_cumulative)
