@@ -1,4 +1,4 @@
-datapath = '/Volumes/FieldLab/Chichilnisky/Analysis/controls/20130401A/chunk1/kilosort25/kilosort25';
+%datapath = '/Volumes/FieldLab/Chichilnisky/Analysis/controls/20130401A/chunk1/kilosort25/kilosort25';
 
 
 datapaths = get_nerve_crush_data('cohort', 'control');
@@ -20,7 +20,7 @@ for dset = 1:num_dsets
     
     % set filter radius
     filt_rad = 0.75; % units of stixels
-    verbose = 0;
+    verbose = 1;
     num_dims_to_plot = 4;
     num_time_steps = 24;
     starting_frame = 30 - num_time_steps;
@@ -88,7 +88,7 @@ for dset = 1:num_dsets
             xlabel('dimensions')
             ylabel('variance explained')
         
-            pause(0.5)
+            pause
         end
     
         if explainedVariance(1) > 0.67
