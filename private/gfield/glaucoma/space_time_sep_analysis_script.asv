@@ -1,9 +1,8 @@
 %% just load in some random data to test things
 
-%temp_path = '/Volumes/gdf/rat-data/2012-10-15-0/Yass/data000/data000';
-%datarun = load_data(temp_path);
+temp_path = '/Volumes/gdf/rat-data/2012-10-15-0/Yass/data000/data000';
+datarun = load_data(temp_path);
 
-%%
 
 
 % load the paths for the data
@@ -46,8 +45,6 @@ for dset = 1:num_dsets
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
 % check for duplicates and for significant stixels
 num_rgcs = length(temp_indices);
 sta_dims = size(datarun.stas.rfs{1});
@@ -82,33 +79,20 @@ utri_matrix = triu(temp_matrix);
 
 [temp_row, temp_col] = find(utri_matrix > 0.75);
 
-all_ids = datarun.cell_ids;
-reduced_ids = all_ids;
+cell_list = datarun.cell_ids;
 
-for rgc = 1:length(all_ids)
-    temp_id = all_ids(rgc);
-    if ismember(temp_id, reduced_ids)
-        temp_index = get_cell_indices(datarun, temp_id);
-        dup_indices = find(utri_matrix(temp_index,:) > 0.75);
-        if ~isempty(dup_indices)
-            %disp('duplicates found')
-            %temp_id
-            dup_ids = datarun.cell_ids(dup_indices);
-            %before_count = size(reduced_ids)    
-            reduced_ids = setdiff(reduced_ids, dup_ids);
-            %after_count = size(reduced_ids)
-            %pause
-        end
-    end
-end
-fprintf('original list had %d RGC, after duplicate removed, there were %d cells. \n', length(all_ids), length(reduced_ids));
+for rgc = 1:length(cell_list)
+    temp_id = cell_list(rgc);
+    temp_index = get_cell_indices(datarun, temp_id);
+    dup_indices = find(utri_matrix(temp_index) > 0.75);
+    if ~isempty(dup_indices)
+        dup_ids = datarun. cell_ids(dup_indices);
+        cell_list = 
 
-% indices of cells after removing duplicates
-temp_indices = get_cell_indices(datarun, reduced_ids);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+    
     % loop over RGCs
     num_rgcs = length(temp_indices);
     cnt = 1; % counter to count the number of space-time separable cells.

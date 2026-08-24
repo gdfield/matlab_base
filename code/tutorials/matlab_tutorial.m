@@ -14,7 +14,7 @@ help load_data
 
 % you may need to change the path for this to work to something on your
 % local drive
-datarun = load_data('/Volumes/FieldLab/lab/Experiments/Array/Analysis/2013-11-27-0/data000/data000');
+datarun = load_data('/Volumes/gdf/rat-data/2012-10-15-0/data001/data001');
 
 % This function called in this way, does not actually load any data, it
 % simply creates a datarun structure in the MATLAB workspace that contains
