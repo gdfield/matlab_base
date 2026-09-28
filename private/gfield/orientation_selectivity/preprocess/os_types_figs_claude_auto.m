@@ -6,14 +6,16 @@ function os_types_figs_claude_auto(T, info, rfimg, dirs, od, o)
 %   Cells without a fit shown as EI centers (grating-run electrode coordinates, um)
 %   in a separate panel.
 % rf_gallery_<class>.pdf: signed RFs (polarity x robust z; white = ON, black = OFF),
-%   25x25-stixel crop around the |z| peak, preferred drift axis in orange
-%   (drawn in image coordinates as in os_rf_gallery_claude_auto).
+%   25x25-stixel crop around the |z| peak, preferred drift axis in orange drawn
+%   with y up (v3; grating and STA coordinates assumed to match), sorted by
+%   h-simple template flank score. summary.pdf panel 3 (v3): flank score vs axis.
 % tuning_polar.pdf: normalized best-condition direction tuning, by class.
 % 2026-09-27 GDF + Claude
 ds = info.dataset; C = ["h_simple", "complex_vOS", "orth_simple"];
 col = struct('h_simple', [0.1 0.35 0.8], 'complex_vOS', [0.85 0.2 0.15], 'orth_simple', [0.2 0.6 0.3], 'other', [0.6 0.6 0.6]);
-ttl = sprintf('%s | anchor %.0f deg | h-simple %d, complex vOS %d, orth-simple %d, other %d%s', ds, info.anchor_axis, ...
-    info.n_h_simple, info.n_complex_vOS, info.n_orth_simple, info.n_other, string(ifelse(info.ambiguous_anchor, ' | AMBIGUOUS ANCHOR', '')));
+ttl = sprintf('%s | anchor %.0f deg (%s, margin %.2f, p %.2g) | h-simple %d, complex vOS %d, orth-simple %d, other %d%s', ds, info.anchor_axis, ...
+    info.anchor_method, info.anchor_margin, info.anchor_p_sep, info.n_h_simple, info.n_complex_vOS, info.n_orth_simple, info.n_other, ...
+    string(ifelse(info.excluded, ' | EXCLUDED (<5 h-simple)', '')));
 % ---------- summary
 f = figure('Visible', 'off', 'Color', 'w', 'Units', 'inches', 'Position', [0 0 11 3.6], 'DefaultAxesFontSize', 7);
 tl = tiledlayout(f, 1, 3, 'TileSpacing', 'compact', 'Padding', 'compact');
@@ -29,8 +31,9 @@ xline(ax, [-o.win o.win], 'k:'); xline(ax, [90 - o.win, -90 + o.win], 'k:'); yli
 xlim(ax, [-90 90]); xlabel(ax, 'preferred axis - anchor (deg)'); ylabel(ax, 'MI = 2F1/F0'); title(ax, 'class assignment');
 legend(ax, {'other', 'h-simple', 'complex vOS', 'orth-simple'}, 'Box', 'off', 'Location', 'best');
 ax = nexttile(tl); hold(ax, 'on');
-for c = ["other", C], m = T.class == c; scatter(ax, T.rf_npatch(m) + 0.15 * randn(sum(m), 1), T.rf_frac_largest(m), 14, col.(c), 'filled', 'MarkerFaceAlpha', 0.7); end
-yline(ax, o.patch_frac, 'k:'); xlabel(ax, 'RF patches (jittered)'); ylabel(ax, 'fraction in largest patch'); title(ax, 'RF patchiness');
+for c = ["other", C], m = T.class == c; scatter(ax, T.axis_rel_anchor(m), T.flank_score(m), 14, col.(c), 'filled', 'MarkerFaceAlpha', 0.7); end
+xline(ax, [-o.win o.win], 'k:'); xlim(ax, [-90 90]); xlabel(ax, 'preferred axis - anchor (deg)'); ylabel(ax, 'h-simple template flank score');
+title(ax, 'RF match to h-simple template');
 title(tl, ttl, 'FontSize', 8, 'Interpreter', 'none');
 exportgraphics(f, [od 'summary.pdf'], 'ContentType', 'vector'); close(f);
 % ---------- mosaics
@@ -65,7 +68,7 @@ for c = C
     if exist(fn, 'file'), delete(fn); end
     if isempty(idx), continue; end
     n_norf = sum(T.class == c) - numel(idx);
-    [~, so] = sort(T.F2n(idx), 'descend'); idx = idx(so); per = 48; np_ = ceil(numel(idx) / per);
+    [~, so] = sort(T.flank_score(idx), 'descend'); idx = idx(so); per = 48; np_ = ceil(numel(idx) / per);
     for pg = 1:np_
         f = figure('Visible', 'off', 'Color', 'w', 'Units', 'inches', 'Position', [0 0 11 8.5], 'DefaultAxesFontSize', 6);
         tl = tiledlayout(f, 6, 8, 'TileSpacing', 'tight', 'Padding', 'compact');
@@ -75,12 +78,12 @@ for c = C
             r1 = max(1, yy - hw):min(size(z, 1), yy + hw); c1 = max(1, xx - hw):min(size(z, 2), xx + hw); zc = zs(r1, c1);
             ax = nexttile(tl); imagesc(ax, zc); axis(ax, 'image', 'off'); colormap(ax, gray); mx = max(abs(zc(:)));
             clim(ax, [-mx mx]); hold(ax, 'on'); yy = yy - r1(1) + 1; xx = xx - c1(1) + 1; L_ = 6;
-            plot(ax, xx + L_ * cosd(T.pref_axis(i)) * [-1 1], yy + L_ * sind(T.pref_axis(i)) * [-1 1], '-', 'Color', [0.95 0.5 0.1], 'LineWidth', 1.2);
+            plot(ax, xx + L_ * cosd(T.pref_axis(i)) * [-1 1], yy - L_ * sind(T.pref_axis(i)) * [-1 1], '-', 'Color', [0.95 0.5 0.1], 'LineWidth', 1.2);
             pstr = 'ON'; if T.polarity(i) < 0, pstr = 'OFF'; elseif isnan(T.polarity(i)) || T.polarity(i) == 0, pstr = '?'; end
             xlim(ax, [0.5 size(zc, 2) + 0.5]); ylim(ax, [0.5 size(zc, 1) + 0.5]);
-            title(ax, sprintf('%d %s MI%.2f\\newlineax%.0f np%d %s', T.cell_id(i), pstr, T.MI(i), T.pref_axis(i), T.rf_npatch(i), T.reason(i)), 'FontSize', 5, 'FontWeight', 'normal');
+            title(ax, sprintf('%d %s MI%.2f\\newlineax%.0f fs%.2f', T.cell_id(i), pstr, T.MI(i), T.pref_axis(i), T.flank_score(i)), 'FontSize', 5, 'FontWeight', 'normal');
         end
-        title(tl, sprintf('%s | %s | page %d/%d | %d cells shown, %d without RF not shown | signed RF (white ON, black OFF), up to 25x25 stixels, orange = preferred drift axis', ds, strrep(c, '_', ' '), pg, np_, numel(idx), n_norf), 'FontSize', 8, 'Interpreter', 'none');
+        title(tl, sprintf('%s | %s | page %d/%d | %d cells shown, %d without RF not shown | signed RF (white ON, black OFF), up to 25x25 stixels, orange = preferred drift axis (y up); sorted by template flank score (fs)', ds, strrep(c, '_', ' '), pg, np_, numel(idx), n_norf), 'FontSize', 8, 'Interpreter', 'none');
         exportgraphics(f, fn, 'ContentType', 'image', 'Resolution', 150, 'Append', pg > 1); close(f);
     end
 end
