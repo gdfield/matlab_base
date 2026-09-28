@@ -1,7 +1,7 @@
 function plot_direction_tuning(tuning_struct, spike_nums, stim_struct, varargin)
 
 p = inputParser;
-p.addParameter('fig_num', 1, @isnumeric);
+p.addParameter('fig_num', 1, @(x) isnumeric(x) || isgraphics(x, 'figure')); % figure number or handle
 p.addParameter('grating_duration', 8, @isnumeric)
 p.addParameter('print', false, @islogical)
 p.addParameter('clear_fig', true, @islogical)
@@ -25,9 +25,18 @@ directions = [directions, directions(1)];
 spike_nums = [spike_nums, spike_nums(1)];
 
 
-figure(p.Results.fig_num)
+% Make the target figure current WITHOUT raising it or stealing window focus.
+% (figure(n) makes a figure visible and brings it to the front;
+% set(0,'CurrentFigure',h) does not.) Accepts a figure handle or number.
+% 2026-09-27 GDF + Claude
+if isnumeric(p.Results.fig_num)
+    fig = bg_figure(p.Results.fig_num);
+else
+    fig = p.Results.fig_num;
+    set(0, 'CurrentFigure', fig);
+end
 if p.Results.clear_fig
-    clf;
+    clf(fig);
 end
 
 % handle case where there are 8 directions
@@ -38,7 +47,7 @@ if num_dirs == 8
     sep_plot_nums = 0:45:315;
     
     % plot tuning function
-    figure(p.Results.fig_num);
+    set(0, 'CurrentFigure', fig);
     subplot(3,3,5)
     polarplot(deg2rad(directions), spike_nums);
     
@@ -50,7 +59,7 @@ if num_dirs == 8
     
     % insert figure title if provided
     if ~isempty(p.Results.fig_title)
-        figure(p.Results.fig_num);
+        set(0, 'CurrentFigure', fig);
         subplot(3,3,1)
         if isstring(p.Results.fig_title)
             title(p.Results.fig_title)
@@ -69,25 +78,25 @@ if num_dirs == 12
     sep_plot_nums = 0:30:330;
     
     % plot tuning function
-    figure(p.Results.fig_num);
+    set(0, 'CurrentFigure', fig);
     subplot(3,3,5)
     polarplot(deg2rad(directions), spike_nums,'color', p.Results.color);
     drawnow
 
     if p.Results.print_for_fig
-        figure(50)
+        bg_figure(50);
         polarplot(deg2rad(directions), spike_nums,'color', p.Results.color);
         saveas(50, '~/Desktop/polar.pdf', 'pdf')
     end
 
     for g_dir = 1:num_dirs
-        figure(p.Results.fig_num);
+        set(0, 'CurrentFigure', fig);
         subplot(5,5,subplot_vector(g_dir+1))
         tmp_spike_times = tuning_struct(g_dir, :);
-        plot_raster(tmp_spike_times, 0, g_duration,'color', p.Results.color)
+        plot_raster(tmp_spike_times, 0, g_duration,'raster_color', p.Results.color)
         
         if p.Results.print_for_fig
-            figure(10+g_dir)
+            bg_figure(10+g_dir);
             for rt=1:length(tmp_spike_times)   
             plot(tmp_spike_times{rt}, rt.*ones(1,length(tmp_spike_times{rt})),'|','markersize',30,'color', p.Results.color); hold on;
             end
@@ -101,7 +110,7 @@ if num_dirs == 12
     end
     % insert figure title if provided
     if ~isempty(p.Results.fig_title)
-        figure(p.Results.fig_num);
+        set(0, 'CurrentFigure', fig);
         subplot(3,3,5)
         if isstring(p.Results.fig_title)
             title(p.Results.fig_title)
@@ -115,10 +124,20 @@ end
 if p.Results.print 
     % construct save location and filename
     save_final = [p.Results.save_path, p.Results.save_name];
-    saveas(p.Results.fig_num, save_final, 'pdf', '-bestfit')
+    print(fig, save_final, '-dpdf', '-bestfit')   % was saveas(...,'-bestfit'); saveas takes no 4th arg
 end
 
+end  % plot_direction_tuning (explicit end needed because the file has a local function)
 
 
-
-
+function f = bg_figure(n)
+% Make figure number n the current figure without raising it or taking focus.
+% Creates it (respecting DefaultFigureVisible) only if it does not exist yet.
+f = findobj(groot, 'Type', 'figure', 'Number', n);
+if isempty(f)
+    f = figure(n);
+else
+    f = f(1);
+end
+set(0, 'CurrentFigure', f);
+end

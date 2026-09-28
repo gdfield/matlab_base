@@ -57,9 +57,9 @@ for dset = 1:num_datasets
     
     for rgc = 1:num_rgcs
 
-        insig_DSI = all(DSIs(rgc,:,:) < DSI_thresh);
-        sig_OSIs = any(OSIs(rgc,:,:) > OSI_thresh);
-        sig_cors = any(mean_corr(rgc,:,:) > response_cor_thresh);
+        insig_DSI = all(DSIs(rgc,:,:)   < DSI_thresh,       'all');
+        sig_OSIs  = any(OSIs(rgc,:,:)   > OSI_thresh,        'all');
+        sig_cors  = any(mean_corr(rgc,:,:) > response_cor_thresh, 'all');
 
         if sig_OSIs && insig_DSI && sig_cors
             fig_counter = 1;
